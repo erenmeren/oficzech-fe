@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #04d972;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+/* @layer components {
+  .bg-primary-color {
+    @apply bg-[#14cbaa];
+  }
+  .border-primary-color {
+    @apply bg-[#14cbaa];
+  }
+} */
