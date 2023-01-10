@@ -96,7 +96,7 @@ export default function Home() {
                     type="text"
                     className="my-3 pl-5 h-12 w-full text-black text-sm rounded-lg 
                   placeholder:text-[#7A8192] placeholder:font-thin"
-                    placeholder={t("common:nameLastname")}
+                    placeholder={t("common:nameLastname") || ""}
                   />
                 </div>
                 <div>
@@ -104,7 +104,7 @@ export default function Home() {
                     type="text"
                     className="my-3 pl-5 h-12 w-full text-black text-sm rounded-lg 
                   placeholder:text-[#7A8192] placeholder:font-thin"
-                    placeholder={t("common:contactNo")}
+                    placeholder={t("common:contactNo") || ""}
                   />
                 </div>
                 <div>
@@ -112,7 +112,7 @@ export default function Home() {
                     type="text"
                     className="my-3 pl-5 h-12 w-full text-black text-sm rounded-lg
                   placeholder:text-[#7A8192] placeholder:font-thin"
-                    placeholder={t("common:email")}
+                    placeholder={t("common:email") || ""}
                   />
                 </div>
                 <div>
@@ -125,13 +125,13 @@ export default function Home() {
                   resize-none 
                   placeholder:text-[#7A8192] placeholder:font-thin
                   "
-                    placeholder={t("common:message")}
+                    placeholder={t("common:message") || ""}
                   ></textarea>
                 </div>
                 <div className="grid place-items-center mt-5 mb-5">
                   <input
                     type="button"
-                    value={t("common:send")}
+                    value={t("common:send") || ""}
                     className="bg-[var(--primary-color)] rounded-lg h-14 w-40 text-xl"
                   />
                 </div>
