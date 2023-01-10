@@ -59,7 +59,7 @@ export default function Navbar() {
                 className={`mr-[5px]`}
                 fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
               />
-              <span
+              {/* <span
                 className="text-sm 
               sm:bg-orange-300
               md:bg-pink-300
@@ -67,9 +67,8 @@ export default function Navbar() {
               xl:bg-rose-300
               2xl:bg-teal-600
               "
-              >
-                +420 605 960 700
-              </span>
+              > */}
+              <span className="text-sm">+420 605 960 700</span>
             </div>
             <div className="flex mx-3">
               <LetterIcon
