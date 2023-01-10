@@ -5,6 +5,13 @@ const nextConfig = {
   reactStrictMode: true,
   i18n,
   webpack(config) {
+    // config.resolve = {
+    //   ...config.resolve,
+    //   fallback: {
+    //     ...config.resolve.fallback,
+    //     fs: false,
+    //   },
+    // };
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],

@@ -1,4 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 import Logo from "@assets/images/logo.svg";
 import PhoneIcon from "@assets/images/icons/phoneIcon.svg";
@@ -6,6 +9,9 @@ import LetterIcon from "@assets/images/icons/letter.svg";
 import PinIcon from "@assets/images/icons/pinIcon.svg";
 
 export default function Navbar() {
+  const router = useRouter();
+  const { t, i18n } = useTranslation();
+
   const [clientWindowHeight, setClientWindowHeight] = useState(0);
 
   const handleScroll = () => {
@@ -86,16 +92,45 @@ export default function Navbar() {
             </div>
           </div>
           <div className="flex justify-end mt-5 text-center">
-            <NavLink pageName="Anasayfa" selected={true} />
-            <NavLink pageName="Hakkimizda" selected={false} />
-            <NavLink pageName="Hizmetlerimiz" selected={false} />
-            <NavLink pageName="Blog" selected={false} />
-            <NavLink pageName="Iletisim" selected={false} />
-
+            <NavLink
+              pageName={t("navbar:homepage")}
+              selected={true}
+              locale={i18n.language}
+              url="/"
+            />
+            <NavLink
+              pageName={t("navbar:aboutUs")}
+              selected={false}
+              locale={i18n.language}
+              url="/"
+            />
+            <NavLink
+              pageName={t("navbar:services")}
+              selected={false}
+              locale={i18n.language}
+              url="/"
+            />
+            <NavLink
+              pageName={t("navbar:blog")}
+              selected={false}
+              locale={i18n.language}
+              url="/"
+            />
+            <NavLink
+              pageName={t("navbar:contact")}
+              selected={false}
+              locale={i18n.language}
+              url="/"
+            />
             <div className="ml-8 flex ">
-              <LangLink langName="TR" selected={true} />
-              <LangLink langName="EN" selected={false} />
-              {/* <LangLink langName="CZ" selected={false} /> */}
+              {router.locales?.map((locale) => (
+                <Link href={router.asPath} locale={locale} key={locale}>
+                  <LangLink
+                    langName={locale}
+                    selected={locale === i18n.language}
+                  />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
@@ -104,24 +139,22 @@ export default function Navbar() {
   );
 }
 
-const NavLink = ({ pageName, selected }: any) => {
+const NavLink = ({ pageName, selected, locale, url }: any) => {
   return (
-    <a className={`mx-3 ${selected ? "text-[var(--primary-color)]" : ""}`}>
-      {pageName}
-    </a>
+    <Link href={url} locale={locale}>
+      <span className={`mx-3 ${selected ? "text-[var(--primary-color)]" : ""}`}>
+        {pageName}
+      </span>
+    </Link>
   );
 };
 
 const LangLink = ({ langName, selected }: any) => {
   return (
     <div
-      className={`h-7 w-7 mx-0.5 rounded-lg align-middle text-center ${
-        langName === "TR" ? "pt-0.5" : ""
-      } ${
-        selected
-          ? "bg-[var(--primary-color)]"
-          : "border-2 border-[var(--primary-color)]"
-      } `}
+      className={`h-7 w-7 mx-0.5 rounded-lg align-middle text-center uppercase border-2 border-[var(--primary-color)] 
+      ${selected ? "bg-[var(--primary-color)]" : ""}
+      `}
     >
       {langName}
     </div>

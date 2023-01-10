@@ -1,1 +1,10 @@
-{ "yes": "evet" }
+{
+  "nameLastname": "İsim Soyisim",
+  "contactNo": "İletişim Numarası",
+  "email": "E-Posta Adresi",
+  "message": "Mesajınız",
+  "send": "Gönder",
+  "contact": "iletişim",
+  "contactForm": "İletişim Formu",
+  "contactFormExp": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+}

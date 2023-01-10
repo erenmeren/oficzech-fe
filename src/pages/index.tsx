@@ -14,6 +14,7 @@ import DocumentIcon from "@assets/images/icons/document.svg";
 import PeopleIcon from "@assets/images/icons/people.svg";
 import PuzzleIcon from "@assets/images/icons/puzzle.svg";
 import TargetIcon from "@assets/images/icons/target.svg";
+// import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -27,23 +28,18 @@ export default function Home() {
       </Head>
       {/* first page */}
       <div
-        className="grid place-items-center bg-cover pt-[200px]"
+        className="grid place-items-center bg-cover min-h-[610px] pb-[10%]"
         style={{ backgroundImage: `url(${heroImg.src})` }}
       >
-        <div className="max-w-7xl w-full px-20 flex justify-between pb-[200px] text-white">
+        <div className="max-w-7xl w-full px-20 flex justify-between mt-[200px]   text-white ">
           <div className="flex items-center pr-10">
             <LeftArrowIcon height={45} width={45} alt="Left icon" fill="#fff" />
           </div>
           <div className="grow">
-            <p className="text-8xl">Çekya&apos; da Yeni Bir Hayat mi ?</p>
-            <p className="my-6 text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <p className="text-8xl">{t("home:title1")}</p>
+            <p className="my-6 text-xl">{t("home:title1Exp")}</p>
             <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center">
-              İletişim Formu
+              {t("common:contactForm")}
             </p>
           </div>
           <div className="flex items-center pl-10">
@@ -63,47 +59,44 @@ export default function Home() {
             <div>
               <HowWeWork
                 icon={<PuzzleIcon height={55} width={55} />}
-                header="Creative Solutions"
-                text="We will go ahead that extra mile to ensure our clients welfare, our working"
+                header={t("home:howWeWorkHeader1")}
+                text={t("home:howWeWorkExp1")}
                 tailStyle=""
               />
 
               <HowWeWork
                 icon={<TargetIcon height={55} width={55} />}
-                header="Diverse Approach"
-                text="We will go ahead that extra mile to ensure our clients welfare, our working"
+                header={t("home:howWeWorkHeader2")}
+                text={t("home:howWeWorkExp2")}
                 tailStyle=""
               />
             </div>
             <div>
               <HowWeWork
                 icon={<PeopleIcon height={55} width={80} />}
-                header="Professional Team"
-                text="We will go ahead that extra mile to ensure our clients welfare, our working"
+                header={t("home:howWeWorkHeader3")}
+                text={t("home:howWeWorkExp3")}
                 tailStyle=""
               />
               <HowWeWork
                 icon={<DocumentIcon height={55} width={55} />}
-                header="Detailed Reports"
-                text="We will go ahead that extra mile to ensure our clients welfare, our working"
+                header={t("home:howWeWorkHeader4")}
+                text={t("home:howWeWorkExp4")}
                 tailStyle=""
               />
             </div>
             <div className="relative bg-[#383838] text-white rounded-b-lg  ">
-              <div className="absolute w-full h-20 -top-20 bg-[var(--primary-color)] rounded-t-lg  px-10 pt-6">
-                <span className="text-xl">Iletisim Formu</span>
+              <div className="absolute w-full h-16 -top-16 bg-[var(--primary-color)] rounded-t-lg px-10 pt-5">
+                <span className="text-xl">{t("common:contactForm")}</span>
               </div>
               <div className="px-10">
-                <p className="mt-10 mb-5">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
-                </p>
+                <p className="mt-10 mb-5">{t("common:contactFormExp")}</p>
                 <div>
                   <input
                     type="text"
                     className="my-3 pl-5 h-12 w-full text-black text-sm rounded-lg 
                   placeholder:text-[#7A8192] placeholder:font-thin"
-                    placeholder="İsim Soyisim"
+                    placeholder={t("common:nameLastname")}
                   />
                 </div>
                 <div>
@@ -111,7 +104,7 @@ export default function Home() {
                     type="text"
                     className="my-3 pl-5 h-12 w-full text-black text-sm rounded-lg 
                   placeholder:text-[#7A8192] placeholder:font-thin"
-                    placeholder="İletişim Numarası"
+                    placeholder={t("common:contactNo")}
                   />
                 </div>
                 <div>
@@ -119,7 +112,7 @@ export default function Home() {
                     type="text"
                     className="my-3 pl-5 h-12 w-full text-black text-sm rounded-lg
                   placeholder:text-[#7A8192] placeholder:font-thin"
-                    placeholder="E-Posta adresi"
+                    placeholder={t("common:email")}
                   />
                 </div>
                 <div>
@@ -132,13 +125,13 @@ export default function Home() {
                   resize-none 
                   placeholder:text-[#7A8192] placeholder:font-thin
                   "
-                    placeholder="Mesajınız"
+                    placeholder={t("common:message")}
                   ></textarea>
                 </div>
                 <div className="grid place-items-center mt-5 mb-5">
                   <input
                     type="button"
-                    value="Gönder"
+                    value={t("common:send")}
                     className="bg-[var(--primary-color)] rounded-lg h-14 w-40 text-xl"
                   />
                 </div>
@@ -148,48 +141,59 @@ export default function Home() {
         </div>
         {/* Blog */}
         <div className="mt-32 max-w-7xl w-full px-20">
-          <PageHeader name="Blog" pageURL="/blog" />
+          <PageHeader
+            name={t("navbar:blog")}
+            pageURL="/blog"
+            urlText={t("home:allPost")}
+          />
           <div className="grid grid-cols-3 gap-8">
             <BlogCard
-              header="Jak správně zvolit název firmy?"
-              text="Podle aktuální právní úpravy nesmí být název firmy zaměnitelný s názvem jiné již existující firmy a nesmí působit klamavě."
+              header={t("home:blogHeader1")}
+              text={t("home:blogExp1")}
               pageURL="Jak"
+              urlText={t("home:readAll")}
             />
             <BlogCard
-              header="Doğru şirket adı nasıl seçilir?"
-              text="Yürürlükteki mevzuata göre şirket adının başka bir şirketin adının yerine geçmemesi ve yanıltıcı olmaması gerekmektedir."
+              header={t("home:blogHeader2")}
+              text={t("home:blogExp2")}
               pageURL="dd"
+              urlText={t("home:readAll")}
             />
             <BlogCard
-              header="Doğru şirket adı nasıl seçilir?"
-              text="Yürürlükteki mevzuata göre şirket adının başka bir şirketin adının yerine geçmemesi ve yanıltıcı olmaması gerekmektedir."
+              header={t("home:blogHeader3")}
+              text={t("home:blogExp3")}
               pageURL="aa"
+              urlText={t("home:readAll")}
             />
           </div>
         </div>
         {/* Hizmetlerimiz */}
         <div className="mt-32 max-w-7xl w-full px-20">
-          <PageHeader name="Hizmetlerimiz" pageURL="/hizmetlerimiz" />
+          <PageHeader
+            name={t("navbar:services")}
+            pageURL="/hizmetlerimiz"
+            urlText={t("home:allPost")}
+          />
           <div className="grid grid-cols-4 gap-10 ">
             <ServicesCard
               img={Service1Img}
               alt="Sirket kurulumu"
-              name="Çekya’da Şirket Kurulumu"
+              name={t("home:ourServicesHeader1")}
             />
             <ServicesCard
               img={Service2Img}
               alt="Vergi ve muhasebe"
-              name="Vergi & Muhasebe"
+              name={t("home:ourServicesHeader2")}
             />
             <ServicesCard
               img={Service3Img}
               alt="Yesil Mutabakat"
-              name="Yeşil Mutabakat"
+              name={t("home:ourServicesHeader3")}
             />
             <ServicesCard
               img={Service3Img}
               alt="Yesil Mutabakat"
-              name="Baska birsey"
+              name={t("home:ourServicesHeader4")}
             />
           </div>
           <div className="flex justify-center h-full mt-5  place-items-center">
@@ -212,28 +216,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <br />
-      <h1>{i18n.language}</h1>
-      <h1>{router.locales?.length}</h1>
-      {router.locales?.map((locale) => (
-        <h1 key={locale}>{locale}</h1>
-      ))}
-
-      <Link href="/" locale={i18n.language}>
-        Home
-      </Link>
-      <Link href="/about" locale={i18n.language}>
-        About
-      </Link>
-
-      {router.locales?.map((locale) => (
-        <Link href={router.asPath} locale={locale} key={locale}>
-          <span>{locale}</span>
-        </Link>
-      ))}
-      {t("common:yes")} */}
     </>
   );
 }
@@ -253,24 +235,24 @@ const ServicesCard = ({ name, img, alt }: any) => {
   );
 };
 
-const PageHeader = ({ name, pageUrl }: any) => {
+const PageHeader = ({ name, pageUrl, urlText }: any) => {
   return (
     <div className="relative mb-16">
       <h1 className="text-8xl text-[#e6e8ec]">{name}</h1>
       <h2 className="absolute text-5xl top-6 left-0.5">{name}</h2>
-      <a className="absolute text-[#3288FC] right-0 top-9">Tüm Yazıları Gör</a>
+      <a className="absolute text-[#3288FC] right-0 top-9">{urlText}</a>
     </div>
   );
 };
 
-const BlogCard = ({ header, text, pageURL }: any) => {
+const BlogCard = ({ header, text, pageURL, urlText }: any) => {
   return (
     <div className="bg-[#F4F5F6] rounded-lg p-10">
       <DocumentIcon width="30" height="30" fill="#C3C3C3" />
       <h3 className="text-2xl my-5">{header}</h3>
       <div className="text-[#7A8192] mb-5">{text}</div>
       <a href={`/blog/${pageURL}`} className="text-[#3288FC]">
-        Tümünü Gör
+        {urlText}
       </a>
     </div>
   );
@@ -291,7 +273,7 @@ const HowWeWork = ({ icon, header, text, tailStyle }: any) => {
 export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "home"])),
+      ...(await serverSideTranslations(locale, ["common", "home", "navbar"])),
       // Will be passed to the page component as props
     },
   };

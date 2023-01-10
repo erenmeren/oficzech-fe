@@ -1,1 +1,25 @@
-{ "home": "ev" }
+{
+  "home": "ev",
+  "title1": "Çekya' da Yeni Bir Hayat mi ?",
+  "title1Exp": "TR - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "howWeWorkHeader1": "Yaratici Cozumler",
+  "howWeWorkExp1": "TR - We will go ahead that extra mile to ensure our clients welfare, our working",
+  "howWeWorkHeader2": "Profosyonel Takim",
+  "howWeWorkExp2": "TR - We will go ahead that extra mile to ensure our clients welfare, our working",
+  "howWeWorkHeader3": "Farkli Yaklasim",
+  "howWeWorkExp3": "TR - We will go ahead that extra mile to ensure our clients welfare, our working",
+  "howWeWorkHeader4": "Detayli Raporlar",
+  "howWeWorkExp4": "TR - We will go ahead that extra mile to ensure our clients welfare, our working",
+  "allPost": "Tüm Yazıları Gör",
+  "readAll": "Tümünü Gör",
+  "blogHeader1": "TR - Jak správně zvolit název firmy?",
+  "blogExp1": "TR - Podle aktuální právní úpravy nesmí být název firmy zaměnitelný s názvem jiné již existující firmy a nesmí působit klamavě.",
+  "blogHeader2": "TR - 2 Doğru şirket adı nasıl seçilir?",
+  "blogExp2": "TR - Yürürlükteki mevzuata göre şirket adının başka bir şirketin adının yerine geçmemesi ve yanıltıcı olmaması gerekmektedir.",
+  "blogHeader3": "TR - 3 Doğru şirket adı nasıl seçilir?",
+  "blogExp3": "TR - Yürürlükteki mevzuata göre şirket adının başka bir şirketin adının yerine geçmemesi ve yanıltıcı olmaması gerekmektedir.",
+  "ourServicesHeader1": "tr Çekya’da Şirket Kurulumu",
+  "ourServicesHeader2": "tr Vergi & Muhasebe",
+  "ourServicesHeader3": "tr Yeşil Mutabakat",
+  "ourServicesHeader4": "tr Yeşil Mutabakat"
+}

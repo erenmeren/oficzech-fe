@@ -1,1 +1,25 @@
-{ "home": "home" }
+{
+  "home": "home",
+  "title1": "A New Life in Czechia?",
+  "title1Exp": "EN - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "howWeWorkHeader1": "Creative Solutions",
+  "howWeWorkTitle1Exp": "We will go ahead that extra mile to ensure our clients welfare, our working",
+  "howWeWorkHeader2": "Professional Team",
+  "howWeWorkTitle2Exp": "We will go ahead that extra mile to ensure our clients welfare, our working",
+  "howWeWorkHeader3": "Diverse Approach",
+  "howWeWorkTitle3Exp": "We will go ahead that extra mile to ensure our clients welfare, our working",
+  "howWeWorkHeader4": "Detailed Reports",
+  "howWeWorkTitle4Exp": "We will go ahead that extra mile to ensure our clients welfare, our working",
+  "allPost": "All Posts",
+  "readAll": "Read All",
+  "blogHeader1": "EN - Jak správně zvolit název firmy?",
+  "blogExp1": "EN - Podle aktuální právní úpravy nesmí být název firmy zaměnitelný s názvem jiné již existující firmy a nesmí působit klamavě.",
+  "blogHeader2": "EN - 2 Doğru şirket adı nasıl seçilir?",
+  "blogExp2": "EN - Yürürlükteki mevzuata göre şirket adının başka bir şirketin adının yerine geçmemesi ve yanıltıcı olmaması gerekmektedir.",
+  "blogHeader3": "EN - 3 Doğru şirket adı nasıl seçilir?",
+  "blogExp3": "EN - Yürürlükteki mevzuata göre şirket adının başka bir şirketin adının yerine geçmemesi ve yanıltıcı olmaması gerekmektedir.",
+  "ourServicesHeader1": "en Çekya’da Şirket Kurulumu",
+  "ourServicesHeader2": "en Vergi & Muhasebe",
+  "ourServicesHeader3": "en Yeşil Mutabakat",
+  "ourServicesHeader4": "en Yeşil Mutabakat"
+}

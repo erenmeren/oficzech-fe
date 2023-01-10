@@ -1,1 +1,10 @@
-{ "yes": "yes" }
+{
+  "nameLastname": "Name Lastname",
+  "contactNo": "Contact Number",
+  "email": "E-Mail Address",
+  "message": "Message",
+  "send": "Send",
+  "contact": "Contact",
+  "contactForm": "Contact Form",
+  "contactFormExp": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+}
