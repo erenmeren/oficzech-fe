@@ -366,7 +366,12 @@ const HowWeWork = ({ icon, header, text, tailStyle }: any) => {
 export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "home", "navbar"])),
+      ...(await serverSideTranslations(locale, [
+        "common",
+        "home",
+        "navbar",
+        "footer",
+      ])),
       // Will be passed to the page component as props
     },
   };
