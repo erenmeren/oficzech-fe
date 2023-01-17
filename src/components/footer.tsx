@@ -3,15 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaLinkedin
-} from "react-icons/fa";
-
 import PhoneIcon from "@assets/images/icons/phoneIcon.svg";
 import LetterIcon from "@assets/images/icons/letter.svg";
 import PinIcon from "@assets/images/icons/pinIcon.svg";
+import FacebookSVG from "@assets/images/facebook.svg";
+import InstagramSVG from "@assets/images/instagram.svg";
+import LinkedInSVG from "@assets/images/linkedin.svg";
 
 export default function Footer() {
   const router = useRouter();
@@ -33,9 +30,9 @@ export default function Footer() {
             {t("navbar:menuItem5")}
           </div>
           <div className="flex justify-end ">
-            <FaLinkedin className="h-8 w-8" />
-            <FaInstagramSquare className="h-8 w-8 mx-5" />
-            <FaFacebookSquare className="h-8 w-8" />
+            <LinkedInSVG className="h-8 w-8" />
+            <InstagramSVG className="h-8 w-8 mx-5" />
+            <FacebookSVG className="h-8 w-8" />
           </div>
         </div>
       </div>
