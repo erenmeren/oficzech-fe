@@ -53,8 +53,8 @@ export default function Navbar() {
           />
         </div>
         <div className="">
-          <div className="mt-5 flex justify-end">
-            <div className="flex mx-3">
+          <div className="mt-5 flex justify-end ">
+            <div className="flex mx-3 font-bold">
               <PhoneIcon
                 alt="Phone icon"
                 width={17}
@@ -73,7 +73,7 @@ export default function Navbar() {
               > */}
               <span className="text-sm">+420 605 960 700</span>
             </div>
-            <div className="flex mx-3">
+            <div className="flex mx-3 font-bold">
               <LetterIcon
                 width={20}
                 height={20}
@@ -82,7 +82,7 @@ export default function Navbar() {
               />
               <span className="text-sm font-bold">info@oficzech.com</span>
             </div>
-            <div className="flex ml-3">
+            <div className="flex ml-3 font-bold">
               <PinIcon
                 alt="Address icon"
                 width={20}
@@ -96,28 +96,26 @@ export default function Navbar() {
           <div className="flex justify-end mt-5 text-center">
             <NavLink
               pageName={t("navbar:menuItem1")}
-              selected={false}
+              selected={true}
               locale={i18n.language}
               url="/"
-              dropdown={false}
             />
             <NavLink
               pageName={t("navbar:menuItem2")}
               selected={false}
               locale={i18n.language}
               url="/"
-              dropdown={false}
             />
             {/* services mega menu */}
             <Menu as="div" className="relative inline-block text-left">
               <div>
                 <Menu.Button
-                  className={`flex mx-3 ${
+                  className={`flex mx-3 font-bold ${
                     false ? "text-[var(--primary-color)]" : ""
                   } `}
                 >
                   {t("navbar:menuItem3")}
-                  <div className="mt-1">
+                  <div className="mt-1 ">
                     <svg
                       className="w-5 h-5 "
                       aria-hidden="true"
@@ -143,11 +141,20 @@ export default function Navbar() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute -right-[239px] mt-7 px-8 pb-8 pt-2  w-[900px]  origin-top-right bg-black/80 rounded-b-md focus:outline-none">
+                <Menu.Items
+                  className={`absolute -right-[239px] mt-7 px-8 pb-8 pt-2  w-[900px]  origin-top-right 
+                 rounded-b-md focus:outline-none     
+                ${
+                  clientWindowHeight !== 0
+                    ? "shadow-2xl bg-white"
+                    : "shadow-none bg-black/80 text-white"
+                }
+                `}
+                >
                   <div className="grid grid-cols-3 h-full">
                     {/* first col */}
                     <div>
-                      <span className="text-[var(--primary-color)] ">
+                      <span className="text-[var(--primary-color)] font-bold">
                         {t("navbar:megaMenuHeader1")}
                       </span>
                       <ul className="list-disc list-inside mt-1 leading-relaxed">
@@ -163,7 +170,7 @@ export default function Navbar() {
                     {/* second col */}
                     <div>
                       <div className="">
-                        <div className="text-[var(--primary-color)]">
+                        <div className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader6")}
                         </div>
                         <ul className="list-disc list-inside mt-1 leading-relaxed">
@@ -172,7 +179,7 @@ export default function Navbar() {
                         </ul>
                       </div>
                       <div className="mt-5">
-                        <div className="text-[var(--primary-color)]">
+                        <div className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader3")}
                         </div>
                         <ul className="list-disc list-inside mt-1 leading-relaxed">
@@ -186,17 +193,17 @@ export default function Navbar() {
                     {/* third col */}
                     <div>
                       <div>
-                        <span className="text-[var(--primary-color)]">
+                        <span className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader7")}
                         </span>
                       </div>
-                      <div className="mt-5">
-                        <span className="text-[var(--primary-color)]">
+                      <div className="mt-3">
+                        <span className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader4")}
                         </span>
                       </div>
-                      <div className="mt-5">
-                        <div className="text-[var(--primary-color)] ">
+                      <div className="mt-3">
+                        <div className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader5")}
                         </div>
                         <ul className="list-disc list-inside mt-1 leading-relaxed">
@@ -204,8 +211,8 @@ export default function Navbar() {
                           <MegaMenuLink pageName={t("navbar:megaMenuItem14")} />
                         </ul>
                       </div>
-                      <div className="mt-5">
-                        <span className="text-[var(--primary-color)]">
+                      <div className="mt-4">
+                        <span className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader2")}
                         </span>
                         <ul className="list-disc list-inside mt-1 leading-relaxed">
@@ -223,14 +230,12 @@ export default function Navbar() {
               selected={false}
               locale={i18n.language}
               url="/"
-              dropdown={false}
             />
             <NavLink
               pageName={t("navbar:menuItem5")}
               selected={false}
               locale={i18n.language}
               url="/"
-              dropdown={false}
             />
             <div className="ml-8 flex ">
               {router.locales?.map((locale) => (
@@ -254,21 +259,23 @@ const NavLink = ({ pageName, selected, locale, url }: any) => {
     <Link
       href={url}
       locale={locale}
-      className={`mx-3 ${selected ? "text-[var(--primary-color)]" : ""} `}
+      className={`font-bold mx-3 ${
+        selected ? "text-[var(--primary-color)]" : ""
+      } `}
     >
       {pageName}
     </Link>
   );
 };
 
-const MegaMenuLink = ({ pageName, selected, locale, url }: any) => {
+const MegaMenuLink = ({ pageName }: any) => {
   return <li>{pageName}</li>;
 };
 
 const LangLink = ({ langName, selected }: any) => {
   return (
     <div
-      className={`h-7 w-7 mx-0.5 rounded-lg align-middle text-center uppercase border-2 border-[var(--primary-color)] 
+      className={`h-7 w-7 mx-0.5 rounded-lg align-middle text-center font-bold uppercase border-2 border-[var(--primary-color)] 
       ${selected ? "bg-[var(--primary-color)]" : ""}
       `}
     >

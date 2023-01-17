@@ -41,7 +41,7 @@ export default function Home() {
         className="grid place-items-center bg-cover min-h-[610px] pb-[10%]"
         style={{ backgroundImage: `url(${heroImg.src})` }}
       >
-        <div className="max-w-7xl w-full px-20 flex justify-between mt-[200px]   text-white ">
+        <div className="max-w-7xl w-full px-20 flex justify-between mt-[200px] text-white ">
           <div className="flex items-center pr-10">
             <LeftArrowIcon
               height={45}
@@ -60,23 +60,23 @@ export default function Home() {
           >
             <div className="grow">
               <SwiperSlide>
-                <p className="text-8xl">{t("home:title1")}</p>
+                <p className="text-8xl font-bold">{t("home:title1")}</p>
                 <p className="my-6 text-xl">{t("home:title1Exp")}</p>
-                <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center">
+                <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold">
                   {t("common:contactForm")}
                 </p>
               </SwiperSlide>
               <SwiperSlide>
-                <p className="text-8xl">2-{t("home:title1")}</p>
+                <p className="text-8xl font-bold">2-{t("home:title1")}</p>
                 <p className="my-6 text-xl">2-{t("home:title1Exp")}</p>
-                <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center">
+                <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold">
                   2-{t("common:contactForm")}
                 </p>
               </SwiperSlide>
               <SwiperSlide>
-                <p className="text-8xl">3-{t("home:title1")}</p>
+                <p className="text-8xl font-bold">3-{t("home:title1")}</p>
                 <p className="my-6 text-xl">3-{t("home:title1Exp")}</p>
-                <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center">
+                <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold">
                   3-{t("common:contactForm")}
                 </p>
               </SwiperSlide>
@@ -129,7 +129,9 @@ export default function Home() {
             </div>
             <div className="relative bg-[#383838] text-white rounded-b-lg  ">
               <div className="absolute w-full h-16 -top-16 bg-[var(--primary-color)] rounded-t-lg px-10 pt-5">
-                <span className="text-xl">{t("common:contactForm")}</span>
+                <span className="text-xl font-bold">
+                  {t("common:contactForm")}
+                </span>
               </div>
               <div className="px-10">
                 <p className="mt-10 mb-5">{t("common:contactFormExp")}</p>
@@ -174,7 +176,7 @@ export default function Home() {
                   <input
                     type="button"
                     value={t("common:send") || ""}
-                    className="bg-[var(--primary-color)] rounded-lg h-14 w-40 text-xl"
+                    className="bg-[var(--primary-color)] rounded-lg h-14 w-40 text-xl font-bold"
                   />
                 </div>
               </div>
@@ -184,7 +186,7 @@ export default function Home() {
         {/* Blog */}
         <div className="mt-32 max-w-7xl w-full px-20">
           <PageHeader
-            name={t("navbar:blog")}
+            name={t("navbar:menuItem4")}
             pageURL="/blog"
             urlText={t("home:allPost")}
           />
@@ -212,7 +214,7 @@ export default function Home() {
         {/* Hizmetlerimiz */}
         <div className="mt-32 max-w-7xl w-full px-20">
           <PageHeader
-            name={t("navbar:services")}
+            name={t("navbar:menuItem3")}
             pageURL="/hizmetlerimiz"
             urlText={t("home:allPost")}
           />
@@ -321,7 +323,7 @@ const ServicesCard = ({ name, img, alt }: any) => {
         alt={alt}
         className="rounded-t-lg w-full"
       />
-      <div className="h-28 p-9 text-xl">{name}</div>
+      <div className="h-28 p-9 text-xl font-bold">{name}</div>
     </div>
   );
 };
@@ -329,8 +331,8 @@ const ServicesCard = ({ name, img, alt }: any) => {
 const PageHeader = ({ name, pageUrl, urlText }: any) => {
   return (
     <div className="relative mb-16">
-      <h1 className="text-8xl text-[#e6e8ec]">{name}</h1>
-      <h2 className="absolute text-5xl top-6 left-0.5">{name}</h2>
+      <h1 className="text-8xl text-[#e6e8ec] font-bold">{name}</h1>
+      <h2 className="absolute text-5xl top-6 left-0.5 font-bold">{name}</h2>
       <a className="absolute text-[#3288FC] right-0 top-9">{urlText}</a>
     </div>
   );
@@ -340,7 +342,7 @@ const BlogCard = ({ header, text, pageURL, urlText }: any) => {
   return (
     <div className="bg-[#F4F5F6] rounded-lg p-10">
       <DocumentIcon width="30" height="30" fill="#C3C3C3" />
-      <h3 className="text-2xl my-5">{header}</h3>
+      <h3 className="text-2xl font-bold my-5">{header}</h3>
       <div className="text-[#7A8192] mb-5">{text}</div>
       <a href={`/blog/${pageURL}`} className="text-[#3288FC]">
         {urlText}
@@ -355,7 +357,7 @@ const HowWeWork = ({ icon, header, text, tailStyle }: any) => {
       className={`grid place-items-center text-center mx-10 my-12 ${tailStyle}`}
     >
       <div className="">{icon}</div>
-      <div className="text-2xl mt-3">{header}</div>
+      <div className="text-2xl mt-3 font-bold">{header}</div>
       <div className="text-sm text-[#7A8192]">{text}</div>
     </div>
   );
