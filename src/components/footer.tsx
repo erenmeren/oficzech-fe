@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 import {
   FaFacebookSquare,
   FaInstagramSquare,
-  FaLinkedin,
+  FaLinkedin
 } from "react-icons/fa";
 
 import PhoneIcon from "@assets/images/icons/phoneIcon.svg";
