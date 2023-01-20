@@ -22,7 +22,7 @@
 
 @layer components {
   .padX {
-    @apply px-[1%] sm:px-[2%] md:px-[8%] lg:px-[5%] xl:px-[12%] 2xl:px-[18%];
+    @apply px-[5%] sm:px-[5%] md:px-[8%] lg:px-[5%] xl:px-[12%] 2xl:px-[18%];
   }
 }
 

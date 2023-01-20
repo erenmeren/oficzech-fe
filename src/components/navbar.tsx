@@ -35,8 +35,8 @@ export default function Navbar() {
       transition duration-300 
       tracking-wide ${
         clientWindowHeight !== 0
-          ? "border-b bg-white"
-          : "shadow-none bg-black/80 text-white"
+          ? "xl:border-b xl:bg-white"
+          : "xl:shadow-none xl:bg-black/80 xl:text-white"
       } `}
     >
       {/* sm:bg-orange-300 
@@ -50,7 +50,7 @@ export default function Navbar() {
             alt="Oficzech Logo"
             width={100}
             height={80}
-            fill={`${clientWindowHeight !== 0 ? "#000" : "#04d972"}`}
+            fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
           />
         </div>
 
@@ -257,8 +257,8 @@ export default function Navbar() {
           {/* Mobile menu */}
           {/* <div className=""> */}
           <div className="xl:hidden flex justify-end self-center">
-            <div className="rounded-full bg-white self-center">
-              <MobileMenuIcon className="w-12 h-12" />
+            <div className="rounded-full self-center bg-[var(--primary-color)]">
+              <MobileMenuIcon className="w-11 h-11" />
             </div>
           </div>
         </div>
