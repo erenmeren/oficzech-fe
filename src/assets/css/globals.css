@@ -12,6 +12,20 @@
   }
 }
 
+ {
+  /* sm:bg-orange-300 
+      md:bg-pink-300 
+      lg:bg-blue-300 
+      xl:bg-rose-300
+      2xl:bg-teal-600 */
+}
+
+@layer components {
+  .padX {
+    @apply px-[1%] sm:px-[2%] md:px-[8%] lg:px-[5%] xl:px-[12%] 2xl:px-[18%];
+  }
+}
+
 /* @layer components {
   .bg-primary-color {
     @apply bg-[#14cbaa];

@@ -10,6 +10,7 @@ import Logo from "@assets/images/logo.svg";
 import PhoneIcon from "@assets/images/icons/phoneIcon.svg";
 import LetterIcon from "@assets/images/icons/letter.svg";
 import PinIcon from "@assets/images/icons/pinIcon.svg";
+import MobileMenuIcon from "@assets/images/icons/mobileMenu.svg";
 
 export default function Navbar() {
   const router = useRouter();
@@ -32,9 +33,9 @@ export default function Navbar() {
       grid place-items-center  
       top-0 left-0 right-0 z-50
       transition duration-300 
-      tracking-wide  ${
+      tracking-wide ${
         clientWindowHeight !== 0
-          ? "shadow-2xl bg-white "
+          ? "border-b bg-white"
           : "shadow-none bg-black/80 text-white"
       } `}
     >
@@ -43,7 +44,7 @@ export default function Navbar() {
       lg:bg-blue-300 
       xl:bg-rose-300
       2xl:bg-teal-600 */}
-      <div className="flex justify-between h-28 max-w-7xl w-full px-20">
+      <div className="flex justify-between h-28 w-full padX ">
         <div className="self-center">
           <Logo
             alt="Oficzech Logo"
@@ -52,8 +53,11 @@ export default function Navbar() {
             fill={`${clientWindowHeight !== 0 ? "#000" : "#04d972"}`}
           />
         </div>
-        <div className="">
-          <div className="mt-5 flex justify-end ">
+
+        {/* normal menu */}
+        <div className="self-center">
+          {/* <div className="mt-5 flex justify-end "> */}
+          <div className="mt-5 flex justify-end hidden xl:flex ">
             <div className="flex mx-3 font-bold">
               <PhoneIcon
                 alt="Phone icon"
@@ -62,7 +66,7 @@ export default function Navbar() {
                 className={`mr-[5px]`}
                 fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
               />
-              {/* <span
+              <span
                 className="text-sm 
               sm:bg-orange-300
               md:bg-pink-300
@@ -70,8 +74,10 @@ export default function Navbar() {
               xl:bg-rose-300
               2xl:bg-teal-600
               "
-              > */}
-              <span className="text-sm">+420 605 960 700</span>
+              >
+                {/* <span className="text-sm"> */}
+                +420 605 960 700
+              </span>
             </div>
             <div className="flex mx-3 font-bold">
               <LetterIcon
@@ -93,7 +99,7 @@ export default function Navbar() {
               <span className="text-sm font-bold">Ostrovského 253/3</span>
             </div>
           </div>
-          <div className="flex justify-end mt-5 text-center">
+          <div className="flex justify-end mt-5 text-center hidden xl:flex ">
             <NavLink
               pageName={t("navbar:menuItem1")}
               selected={true}
@@ -246,6 +252,13 @@ export default function Navbar() {
                   />
                 </Link>
               ))}
+            </div>
+          </div>
+          {/* Mobile menu */}
+          {/* <div className=""> */}
+          <div className="xl:hidden flex justify-end self-center">
+            <div className="rounded-full bg-white self-center">
+              <MobileMenuIcon className="w-12 h-12" />
             </div>
           </div>
         </div>

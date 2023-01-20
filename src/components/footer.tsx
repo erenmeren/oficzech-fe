@@ -6,9 +6,9 @@ import { useTranslation } from "next-i18next";
 import PhoneIcon from "@assets/images/icons/phoneIcon.svg";
 import LetterIcon from "@assets/images/icons/letter.svg";
 import PinIcon from "@assets/images/icons/pinIcon.svg";
-import FacebookSVG from "@assets/images/facebook.svg";
-import InstagramSVG from "@assets/images/instagram.svg";
-import LinkedInSVG from "@assets/images/linkedin.svg";
+import FacebookSVG from "@assets/images/icons/facebook.svg";
+import InstagramSVG from "@assets/images/icons/instagram.svg";
+import LinkedInSVG from "@assets/images/icons/linkedin.svg";
 
 export default function Footer() {
   const router = useRouter();
