@@ -17,7 +17,7 @@ export default function Footer() {
     <div className="bg-[#F4F5F6]">
       {/* step 1 */}
       <div className="grid place-items-center py-5">
-        <div className="max-w-7xl w-full px-20 grid grid-cols-2 flex items-center">
+        <div className="grid grid-cols-2 flex items-center w-full padX">
           <div className="flex font-medium">
             {t("navbar:menuItem1")}
             <div className="mx-3">|</div>
@@ -38,7 +38,7 @@ export default function Footer() {
       </div>
       {/* step 2 */}
       <div className="grid place-items-center">
-        <div className="max-w-7xl w-full px-20 ">
+        <div className="w-full padX">
           <div className="w-full border-b-2 border-[#C3C3C3]"></div>
           <div className="grid grid-cols-4 py-5">
             <div>
@@ -97,7 +97,7 @@ export default function Footer() {
       {/* step 3 */}
       <div className="bg-[#7A8192] w-full">
         <div className="grid place-items-center py-5">
-          <div className="max-w-7xl w-full px-20 grid flex items-center">
+          <div className="w-full padX grid flex items-center">
             <div className="flex justify-start w-full">
               <div className="flex mr-5 font-bold text-white">
                 <PhoneIcon
@@ -136,7 +136,7 @@ export default function Footer() {
       </div>
       {/* step 4 */}
       <div className="grid place-items-center py-5">
-        <div className="max-w-7xl w-full px-20 grid grid-cols-2 flex items-center">
+        <div className="w-full padX grid grid-cols-2 flex items-center">
           Copyright © {new Date().getFullYear()} Oficzech {t("footer:rights")}
         </div>
       </div>

@@ -41,7 +41,7 @@ export default function Home() {
     <>
       {/* first page */}
       <div
-        className="grid place-items-center bg-cover min-h-[100px] h-screen lg:pb-[10%]"
+        className="grid place-items-center bg-cover min-h-[800px] h-screen lg:pb-[10%]"
         style={{ backgroundImage: `url(${heroImg.src})` }}
       >
         <div className="w-full padX grid grid-cols-12 text-white lg:mt-[200px]">
@@ -68,7 +68,7 @@ export default function Home() {
                 <p className="text-5xl font-bold  lg:text-8xl">
                   {t("home:title1")}
                 </p>
-                <p className="my-6 text-xl">{t("home:title1Exp")}</p>
+                <p className="my-6 text-lg lg:text-xl">{t("home:title1Exp")}</p>
                 {/* <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold hidden lg:block">
                   {t("common:contactForm")}
                 </p> */}
@@ -111,8 +111,8 @@ export default function Home() {
       <div className="grid place-items-center pb-32">
         {/* contant & how we work */}
         <div className="w-full padX">
-          <div className="grid grid-cols-1 gap-8 xl:grid-cols-3 ">
-            <div className="hidden">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 ">
+            <div className="hidden lg:inline">
               <ScrollAnimation>
                 <HowWeWork
                   icon={<PuzzleIcon height={55} width={55} />}
@@ -129,7 +129,7 @@ export default function Home() {
                 />
               </ScrollAnimation>
             </div>
-            <div className="hidden">
+            <div className="hidden lg:inline">
               <ScrollAnimation>
                 <HowWeWork
                   icon={<PeopleIcon height={55} width={80} />}
@@ -203,14 +203,14 @@ export default function Home() {
           </div>
         </div>
         {/* Blog */}
-        {/* <div className="mt-20 max-w-7xl w-full px-20">
+        <div className="mt-20 w-full padX">
           <PageHeader
             name={t("navbar:menuItem4")}
             pageURL="/blog"
             urlText={t("home:allPost")}
           />
           <ScrollAnimation>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 ">
               <BlogCard
                 header={t("home:blogHeader1")}
                 text={t("home:blogExp1")}
@@ -231,71 +231,74 @@ export default function Home() {
               />
             </div>
           </ScrollAnimation>
-        </div> */}
+        </div>
         {/* Hizmetlerimiz */}
-        {/* <div className="mt-32 max-w-7xl w-full px-20">
+        <div className="my-28 w-full padX">
           <PageHeader
             name={t("navbar:menuItem3")}
             pageURL="/hizmetlerimiz"
             urlText={t("home:allPost")}
           />
-          <ScrollAnimation>
-            <Swiper
-              slidesPerView={4}
-              spaceBetween={50}
-              // loop={true}
-              autoplay={{ delay: 3000 }}
-              modules={[Controller]}
-              onSwiper={setSecondSwiper}
-              onSlideChange={() => setSliderCount((sliderCount + 1) % 3)}
-            >
-              <div className="grid grid-cols-4 gap-10 ">
-                <SwiperSlide>
-                  <ServicesCard
-                    img={Service1Img}
-                    alt={t("navbar:megaMenuHeader1")}
-                    name={t("navbar:megaMenuHeader1")}
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <ServicesCard
-                    img={Service2Img}
-                    alt={t("navbar:megaMenuHeader6")}
-                    name={t("navbar:megaMenuHeader6")}
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <ServicesCard
-                    img={Service3Img}
-                    alt={t("navbar:megaMenuHeader3")}
-                    name={t("navbar:megaMenuHeader4")}
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <ServicesCard
-                    img={Service3Img}
-                    alt={t("navbar:megaMenuHeader4")}
-                    name={t("navbar:megaMenuHeader4")}
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <ServicesCard
-                    img={Service2Img}
-                    alt={t("navbar:megaMenuHeader2")}
-                    name={t("navbar:megaMenuHeader2")}
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <ServicesCard
-                    img={Service3Img}
-                    alt={t("navbar:megaMenuHeader7")}
-                    name={t("navbar:megaMenuHeader7")}
-                  />
-                </SwiperSlide>
-              </div>
-            </Swiper>
 
-            <div className="flex justify-center h-full mt-5 place-items-center">
+          <ScrollAnimation>
+            <div className="grid grid-cols-1">
+              <div>
+                <Swiper
+                  slidesPerView={4}
+                  spaceBetween={20}
+                  // loop={true}
+                  autoplay={{ delay: 10000 }}
+                  modules={[Controller]}
+                  onSwiper={setSecondSwiper}
+                  onSlideChange={() => setSliderCount((sliderCount + 1) % 3)}
+                >
+                  <SwiperSlide>
+                    <ServicesCard
+                      img={Service1Img}
+                      alt={t("navbar:megaMenuHeader1")}
+                      name={t("navbar:megaMenuHeader1")}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <ServicesCard
+                      img={Service2Img}
+                      alt={t("navbar:megaMenuHeader6")}
+                      name={t("navbar:megaMenuHeader6")}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <ServicesCard
+                      img={Service3Img}
+                      alt={t("navbar:megaMenuHeader3")}
+                      name={t("navbar:megaMenuHeader4")}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <ServicesCard
+                      img={Service3Img}
+                      alt={t("navbar:megaMenuHeader4")}
+                      name={t("navbar:megaMenuHeader4")}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <ServicesCard
+                      img={Service2Img}
+                      alt={t("navbar:megaMenuHeader2")}
+                      name={t("navbar:megaMenuHeader2")}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <ServicesCard
+                      img={Service3Img}
+                      alt={t("navbar:megaMenuHeader7")}
+                      name={t("navbar:megaMenuHeader7")}
+                    />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+            </div>
+
+            <div className="flex justify-center h-full mt-5 place-items-center hidden lg:flex">
               <LeftArrowIcon
                 height={15}
                 width={15}
@@ -330,7 +333,7 @@ export default function Home() {
               />
             </div>
           </ScrollAnimation>
-        </div> */}
+        </div>
       </div>
     </>
   );
@@ -354,8 +357,10 @@ const ServicesCard = ({ name, img, alt }: any) => {
 const PageHeader = ({ name, pageUrl, urlText }: any) => {
   return (
     <div className="relative mb-16">
-      <h1 className="text-8xl text-[#e6e8ec] font-bold">{name}</h1>
-      <h2 className="absolute text-5xl top-6 left-0.5 font-bold">{name}</h2>
+      <h1 className="text-6xl lg:text-8xl text-[#e6e8ec] font-bold">{name}</h1>
+      <h2 className="absolute text-3xl lg:text-5xl top-6 left-0.5 font-bold">
+        {name}
+      </h2>
       <a className="absolute text-[#3288FC] right-0 top-9">{urlText}</a>
     </div>
   );
