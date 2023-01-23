@@ -41,17 +41,17 @@ export default function Home() {
     <>
       {/* first page */}
       <div
-        className="grid place-items-center bg-cover min-h-[610px] pb-[10%]"
+        className="grid place-items-center bg-cover min-h-[100px] h-screen lg:pb-[10%]"
         style={{ backgroundImage: `url(${heroImg.src})` }}
       >
-        <div className="w-full padX grid grid-cols-12 mt-[200px] text-white ">
+        <div className="w-full padX grid grid-cols-12 text-white lg:mt-[200px]">
           <div className="flex items-center justify-self-start">
             <LeftArrowIcon
               height={45}
               width={45}
               alt="Left icon"
               fill="#fff"
-              className="left-0"
+              className="cursor-pointer left-0 h-5 w-5 lg:w-12 lg:h-12"
               onClick={() => firstSwiper.slidePrev()}
             />
           </div>
@@ -65,25 +65,31 @@ export default function Home() {
               className=""
             >
               <SwiperSlide>
-                <p className="text-8xl font-bold">{t("home:title1")}</p>
+                <p className="text-5xl font-bold  lg:text-8xl">
+                  {t("home:title1")}
+                </p>
                 <p className="my-6 text-xl">{t("home:title1Exp")}</p>
-                <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold">
+                {/* <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold hidden lg:block">
                   {t("common:contactForm")}
-                </p>
+                </p> */}
               </SwiperSlide>
               <SwiperSlide>
-                <p className="text-8xl font-bold">2-{t("home:title1")}</p>
+                <p className="text-5xl font-bold lg:text-8xl">
+                  2-{t("home:title1")}
+                </p>
                 <p className="my-6 text-xl">2-{t("home:title1Exp")}</p>
-                <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold">
+                {/* <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold hidden lg:block">
                   2-{t("common:contactForm")}
-                </p>
+                </p> */}
               </SwiperSlide>
               <SwiperSlide>
-                <p className="text-8xl font-bold">3-{t("home:title1")}</p>
-                <p className="my-6 text-xl">3-{t("home:title1Exp")}</p>
-                <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold">
-                  3-{t("common:contactForm")}
+                <p className="text-5xl font-bold lg:text-8xl">
+                  3-{t("home:title1")}
                 </p>
+                <p className="my-6 text-xl">3-{t("home:title1Exp")}</p>
+                {/* <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold hidden lg:block">
+                  3-{t("common:contactForm")}
+                </p> */}
               </SwiperSlide>
             </Swiper>
           </div>
@@ -94,6 +100,7 @@ export default function Home() {
                 width={45}
                 alt="Right icon"
                 fill="#fff"
+                className="cursor-pointer h-5 w-5 lg:w-12 lg:h-12"
                 onClick={() => firstSwiper.slideNext()}
               />
             </div>
@@ -103,37 +110,42 @@ export default function Home() {
       {/* second page */}
       <div className="grid place-items-center pb-32">
         {/* contant & how we work */}
-        <div className="max-w-7xl w-full px-20">
-          <div className="grid grid-cols-3 grid-flow-col gap-8">
-            <ScrollAnimation>
-              <HowWeWork
-                icon={<PuzzleIcon height={55} width={55} />}
-                header={t("home:howWeWorkHeader1")}
-                text={t("home:howWeWorkExp1")}
-                tailStyle="mt-20"
-              />
+        <div className="w-full padX">
+          <div className="grid grid-cols-1 gap-8 xl:grid-cols-3 ">
+            <div className="hidden">
+              <ScrollAnimation>
+                <HowWeWork
+                  icon={<PuzzleIcon height={55} width={55} />}
+                  header={t("home:howWeWorkHeader1")}
+                  text={t("home:howWeWorkExp1")}
+                  tailStyle="mt-20"
+                />
 
-              <HowWeWork
-                icon={<TargetIcon height={55} width={55} />}
-                header={t("home:howWeWorkHeader2")}
-                text={t("home:howWeWorkExp2")}
-                tailStyle=""
-              />
-            </ScrollAnimation>
-            <ScrollAnimation>
-              <HowWeWork
-                icon={<PeopleIcon height={55} width={80} />}
-                header={t("home:howWeWorkHeader3")}
-                text={t("home:howWeWorkExp3")}
-                tailStyle="mt-20"
-              />
-              <HowWeWork
-                icon={<DocumentIcon height={55} width={55} />}
-                header={t("home:howWeWorkHeader4")}
-                text={t("home:howWeWorkExp4")}
-                tailStyle=""
-              />
-            </ScrollAnimation>
+                <HowWeWork
+                  icon={<TargetIcon height={55} width={55} />}
+                  header={t("home:howWeWorkHeader2")}
+                  text={t("home:howWeWorkExp2")}
+                  tailStyle=""
+                />
+              </ScrollAnimation>
+            </div>
+            <div className="hidden">
+              <ScrollAnimation>
+                <HowWeWork
+                  icon={<PeopleIcon height={55} width={80} />}
+                  header={t("home:howWeWorkHeader3")}
+                  text={t("home:howWeWorkExp3")}
+                  tailStyle="mt-20"
+                />
+                <HowWeWork
+                  icon={<DocumentIcon height={55} width={55} />}
+                  header={t("home:howWeWorkHeader4")}
+                  text={t("home:howWeWorkExp4")}
+                  tailStyle=""
+                />
+              </ScrollAnimation>
+            </div>
+
             <div className="relative bg-[#383838] text-white rounded-b-lg  ">
               <div className="absolute w-full h-16 -top-16 bg-[var(--primary-color)] rounded-t-lg px-10 pt-5">
                 <span className="text-xl font-bold">
@@ -191,7 +203,7 @@ export default function Home() {
           </div>
         </div>
         {/* Blog */}
-        <div className="mt-20 max-w-7xl w-full px-20">
+        {/* <div className="mt-20 max-w-7xl w-full px-20">
           <PageHeader
             name={t("navbar:menuItem4")}
             pageURL="/blog"
@@ -219,9 +231,9 @@ export default function Home() {
               />
             </div>
           </ScrollAnimation>
-        </div>
+        </div> */}
         {/* Hizmetlerimiz */}
-        <div className="mt-32 max-w-7xl w-full px-20">
+        {/* <div className="mt-32 max-w-7xl w-full px-20">
           <PageHeader
             name={t("navbar:menuItem3")}
             pageURL="/hizmetlerimiz"
@@ -318,7 +330,7 @@ export default function Home() {
               />
             </div>
           </ScrollAnimation>
-        </div>
+        </div> */}
       </div>
     </>
   );

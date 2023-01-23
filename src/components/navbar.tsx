@@ -35,8 +35,8 @@ export default function Navbar() {
       transition duration-300 
       tracking-wide ${
         clientWindowHeight !== 0
-          ? "xl:border-b xl:bg-white"
-          : "xl:shadow-none xl:bg-black/80 xl:text-white"
+          ? "lg:border-b lg:bg-white"
+          : "lg:shadow-none lg:bg-black/80 lg:text-white"
       } `}
     >
       {/* sm:bg-orange-300 
@@ -57,7 +57,7 @@ export default function Navbar() {
         {/* normal menu */}
         <div className="self-center">
           {/* <div className="mt-5 flex justify-end "> */}
-          <div className="mt-5 flex justify-end hidden xl:flex ">
+          <div className="mt-5 flex justify-end hidden lg:flex ">
             <div className="flex mx-3 font-bold">
               <PhoneIcon
                 alt="Phone icon"
@@ -99,7 +99,7 @@ export default function Navbar() {
               <span className="text-sm font-bold">Ostrovského 253/3</span>
             </div>
           </div>
-          <div className="flex justify-end mt-5 text-center hidden xl:flex ">
+          <div className="flex justify-end mt-5 text-center hidden lg:flex ">
             <NavLink
               pageName={t("navbar:menuItem1")}
               selected={true}
@@ -256,8 +256,8 @@ export default function Navbar() {
           </div>
           {/* Mobile menu */}
           {/* <div className=""> */}
-          <div className="xl:hidden flex justify-end self-center">
-            <div className="rounded-full self-center bg-[var(--primary-color)]">
+          <div className="lg:hidden flex justify-end self-center">
+            <div className="rounded-full self-center border-2 border-[var(--primary-color)] bg-white">
               <MobileMenuIcon className="w-11 h-11" />
             </div>
           </div>
