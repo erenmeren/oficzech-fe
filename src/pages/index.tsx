@@ -244,13 +244,29 @@ export default function Home() {
             <div className="grid grid-cols-1">
               <div>
                 <Swiper
-                  slidesPerView={4}
+                  // slidesPerView={4}
                   spaceBetween={20}
                   // loop={true}
                   autoplay={{ delay: 10000 }}
                   modules={[Controller]}
                   onSwiper={setSecondSwiper}
                   onSlideChange={() => setSliderCount((sliderCount + 1) % 3)}
+                  breakpoints={{
+                    // when window width is >= 640px
+                    640: {
+                      // width: 640,
+                      slidesPerView: 1,
+                    },
+                    768: {
+                      // width: 640,
+                      slidesPerView: 2,
+                    },
+                    // when window width is >= 768px
+                    1024: {
+                      // width: 768,
+                      slidesPerView: 4,
+                    },
+                  }}
                 >
                   <SwiperSlide>
                     <ServicesCard
