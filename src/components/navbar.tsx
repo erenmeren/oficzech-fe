@@ -58,7 +58,7 @@ export default function Navbar() {
         <div className="self-center">
           {/* <div className="mt-5 flex justify-end "> */}
           <div className="mt-5 flex justify-end hidden lg:flex ">
-            <div className="flex mx-3 font-bold">
+            <div className="flex mx-3 ">
               <PhoneIcon
                 alt="Phone icon"
                 width={17}
@@ -68,27 +68,22 @@ export default function Navbar() {
               />
               <span
                 className="text-sm 
-              sm:bg-orange-300
-              md:bg-pink-300
-              lg:bg-blue-300
-              xl:bg-rose-300
-              2xl:bg-teal-600
               "
               >
                 {/* <span className="text-sm"> */}
                 +420 605 960 700
               </span>
             </div>
-            <div className="flex mx-3 font-bold">
+            <div className="flex mx-3 ">
               <LetterIcon
                 width={20}
                 height={20}
                 fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
                 className="mr-[5px]"
               />
-              <span className="text-sm font-bold">info@oficzech.com</span>
+              <span className="text-sm">info@oficzech.com</span>
             </div>
-            <div className="flex ml-3 font-bold">
+            <div className="flex ml-3">
               <PinIcon
                 alt="Address icon"
                 width={20}
@@ -96,21 +91,21 @@ export default function Navbar() {
                 fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
                 className="mr-[5px]"
               />
-              <span className="text-sm font-bold">Ostrovského 253/3</span>
+              <span className="text-sm">Ostrovského 253/3</span>
             </div>
           </div>
           <div className="flex justify-end mt-5 text-center hidden lg:flex ">
             <NavLink
               pageName={t("navbar:menuItem1")}
-              selected={true}
+              selected={router.asPath === "/"}
               locale={i18n.language}
               url="/"
             />
             <NavLink
               pageName={t("navbar:menuItem2")}
-              selected={false}
+              selected={router.asPath === "/hakkimizda"}
               locale={i18n.language}
-              url="/"
+              url="/hakkimizda"
             />
             {/* services mega menu */}
             <Menu as="div" className="relative inline-block text-left">
@@ -121,7 +116,7 @@ export default function Navbar() {
                   } `}
                 >
                   {t("navbar:menuItem3")}
-                  <div className="mt-1 ">
+                  <div className="mt-1">
                     <svg
                       className="w-5 h-5 "
                       aria-hidden="true"
@@ -148,8 +143,7 @@ export default function Navbar() {
                 leaveTo="transform opacity-0 scale-95"
               >
                 <Menu.Items
-                  className={`absolute -right-[239px] mt-7 px-8 pb-8 pt-2  w-[900px]  origin-top-right 
-                 rounded-b-md focus:outline-none     
+                  className={`absolute -right-[239px] top-3 mt-7 px-8 pb-8 pt-2 w-[900px] origin-top-right rounded-b-md focus:outline-none     
                 ${
                   clientWindowHeight !== 0
                     ? "shadow-2xl bg-white"

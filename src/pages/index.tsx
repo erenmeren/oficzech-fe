@@ -9,6 +9,7 @@ import { Controller } from "swiper";
 import "swiper/css";
 
 import heroImg from "@assets/images/hero2.png";
+import heroImg2 from "@assets/images/hero.png";
 import Service1Img from "@assets/images/services-1.png";
 import Service2Img from "@assets/images/services-2.png";
 import Service3Img from "@assets/images/services-3.png";
@@ -20,7 +21,6 @@ import PuzzleIcon from "@assets/images/icons/puzzle.svg";
 import TargetIcon from "@assets/images/icons/target.svg";
 import { useState } from "react";
 import ScrollAnimation from "@components/ScrollAnimation";
-import MainSlide from "@components/MainSlide";
 
 export default function Home() {
   const router = useRouter();
