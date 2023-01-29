@@ -227,15 +227,15 @@ export default function Navbar() {
             </Menu>
             <NavLink
               pageName={t("navbar:menuItem4")}
-              selected={false}
+              selected={router.asPath === "/blog"}
               locale={i18n.language}
-              url="/"
+              url="/blog"
             />
             <NavLink
               pageName={t("navbar:menuItem5")}
               selected={false}
               locale={i18n.language}
-              url="/"
+              url="/iletisim"
             />
             <div className="ml-8 flex ">
               {router.locales?.map((locale) => (
