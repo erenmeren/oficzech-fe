@@ -33,7 +33,7 @@ export default function Navbar() {
       grid place-items-center  
       top-0 left-0 right-0 z-50
       transition duration-300 
-      tracking-wide ${
+      ${
         clientWindowHeight !== 0
           ? "lg:border-b lg:bg-white"
           : "lg:shadow-none lg:bg-black/80 lg:text-white"
@@ -44,7 +44,7 @@ export default function Navbar() {
       lg:bg-blue-300 
       xl:bg-rose-300
       2xl:bg-teal-600 */}
-      <div className="flex justify-between h-28 w-full padX ">
+      <div className="flex justify-between w-full padX text-[13px]">
         <div className="self-center">
           <Logo
             alt="Oficzech Logo"
@@ -55,10 +55,9 @@ export default function Navbar() {
         </div>
 
         {/* normal menu */}
-        <div className="self-center">
-          {/* <div className="mt-5 flex justify-end "> */}
-          <div className="mt-5 flex justify-end hidden lg:flex ">
-            <div className="flex mx-3 ">
+        <div className="self-center ">
+          <div className="flex justify-end mt-2.5 hidden lg:flex ">
+            <div className="flex mx-6 ">
               <PhoneIcon
                 alt="Phone icon"
                 width={17}
@@ -66,24 +65,18 @@ export default function Navbar() {
                 className={`mr-[5px]`}
                 fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
               />
-              <span
-                className="text-sm 
-              "
-              >
-                {/* <span className="text-sm"> */}
-                +420 605 960 700
-              </span>
+              <span>+420 605 960 700</span>
             </div>
-            <div className="flex mx-3 ">
+            <div className="flex mx-6 ">
               <LetterIcon
                 width={20}
                 height={20}
                 fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
                 className="mr-[5px]"
               />
-              <span className="text-sm">info@oficzech.com</span>
+              <span>info@oficzech.com</span>
             </div>
-            <div className="flex ml-3">
+            <div className="flex ml-6">
               <PinIcon
                 alt="Address icon"
                 width={20}
@@ -91,10 +84,10 @@ export default function Navbar() {
                 fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
                 className="mr-[5px]"
               />
-              <span className="text-sm">Ostrovského 253/3</span>
+              <span>Ostrovského 253/3</span>
             </div>
           </div>
-          <div className="flex justify-end mt-5 text-center hidden lg:flex ">
+          <div className="flex justify-end mt-6 mb-3.5 grid place-items-center hidden lg:flex">
             <NavLink
               pageName={t("navbar:menuItem1")}
               selected={router.asPath === "/"}
@@ -111,12 +104,12 @@ export default function Navbar() {
             <Menu as="div" className="relative inline-block text-left">
               <div>
                 <Menu.Button
-                  className={`flex mx-3 font-bold ${
+                  className={`flex mx-3 mt-[2px] font-bold ${
                     false ? "text-[var(--primary-color)]" : ""
                   } `}
                 >
                   {t("navbar:menuItem3")}
-                  <div className="mt-1">
+                  <div className="">
                     <svg
                       className="w-5 h-5 "
                       aria-hidden="true"
@@ -143,7 +136,7 @@ export default function Navbar() {
                 leaveTo="transform opacity-0 scale-95"
               >
                 <Menu.Items
-                  className={`absolute -right-[239px] top-3 mt-7 px-8 pb-8 pt-2 w-[900px] origin-top-right rounded-b-md focus:outline-none     
+                  className={`absolute -right-[239px] top-[9px] mt-7 px-8 pb-8 pt-2 w-[900px] origin-top-right rounded-b-md focus:outline-none     
                 ${
                   clientWindowHeight !== 0
                     ? "shadow-2xl bg-white"
@@ -249,7 +242,6 @@ export default function Navbar() {
             </div>
           </div>
           {/* Mobile menu */}
-          {/* <div className=""> */}
           <div className="lg:hidden flex justify-end self-center">
             <div className="rounded-full self-center border-2 border-[var(--primary-color)] bg-white">
               <MobileMenuIcon className="w-11 h-11" />
@@ -266,7 +258,7 @@ const NavLink = ({ pageName, selected, locale, url }: any) => {
     <Link
       href={url}
       locale={locale}
-      className={`font-bold mx-3 ${
+      className={`font-bold mx-6  ${
         selected ? "text-[var(--primary-color)]" : ""
       } `}
     >
@@ -276,17 +268,17 @@ const NavLink = ({ pageName, selected, locale, url }: any) => {
 };
 
 const MegaMenuLink = ({ pageName }: any) => {
-  return <li>{pageName}</li>;
+  return <li className="">{pageName}</li>;
 };
 
 const LangLink = ({ langName, selected }: any) => {
   return (
     <div
-      className={`h-7 w-7 mx-0.5 rounded-lg align-middle text-center font-bold uppercase border-2 border-[var(--primary-color)] 
+      className={`h-[25px] w-[25px] mx-0.5 text-[11px] rounded-lg align-middle text-center font-bold  uppercase border-2 border-[var(--primary-color)] 
       ${selected ? "bg-[var(--primary-color)]" : ""}
       `}
     >
-      {langName}
+      <p className="pt-0.5">{langName}</p>
     </div>
   );
 };
