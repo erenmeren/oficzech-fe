@@ -150,7 +150,7 @@ export default function Navbar() {
                       <span className="text-[var(--primary-color)] font-bold">
                         {t("navbar:megaMenuHeader1")}
                       </span>
-                      <ul className="list-disc list-inside mt-1 leading-relaxed">
+                      <ul className="mt-1.5 leading-relaxed">
                         <MegaMenuLink pageName={t("navbar:megaMenuItem1")} />
                         <MegaMenuLink pageName={t("navbar:megaMenuItem2")} />
                         <MegaMenuLink pageName={t("navbar:megaMenuItem3")} />
@@ -166,16 +166,16 @@ export default function Navbar() {
                         <div className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader6")}
                         </div>
-                        <ul className="list-disc list-inside mt-1 leading-relaxed">
+                        <ul className="mt-1.5 leading-relaxed">
                           <MegaMenuLink pageName={t("navbar:megaMenuItem15")} />
                           <MegaMenuLink pageName={t("navbar:megaMenuItem16")} />
                         </ul>
                       </div>
-                      <div className="mt-5">
+                      <div className="mt-4">
                         <div className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader3")}
                         </div>
-                        <ul className="list-disc list-inside mt-1 leading-relaxed">
+                        <ul className="mt-1.5 leading-relaxed">
                           <MegaMenuLink pageName={t("navbar:megaMenuItem9")} />
                           <MegaMenuLink pageName={t("navbar:megaMenuItem10")} />
                           <MegaMenuLink pageName={t("navbar:megaMenuItem11")} />
@@ -190,16 +190,16 @@ export default function Navbar() {
                           {t("navbar:megaMenuHeader7")}
                         </span>
                       </div>
-                      <div className="mt-3">
+                      <div className="mt-4">
                         <span className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader4")}
                         </span>
                       </div>
-                      <div className="mt-3">
+                      <div className="mt-4">
                         <div className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader5")}
                         </div>
-                        <ul className="list-disc list-inside mt-1 leading-relaxed">
+                        <ul className="mt-1.5 leading-relaxed">
                           <MegaMenuLink pageName={t("navbar:megaMenuItem13")} />
                           <MegaMenuLink pageName={t("navbar:megaMenuItem14")} />
                         </ul>
@@ -208,7 +208,7 @@ export default function Navbar() {
                         <span className="text-[var(--primary-color)] font-bold">
                           {t("navbar:megaMenuHeader2")}
                         </span>
-                        <ul className="list-disc list-inside mt-1 leading-relaxed">
+                        <ul className="mt-1.5 leading-relaxed">
                           <MegaMenuLink pageName={t("navbar:megaMenuItem7")} />
                           <MegaMenuLink pageName={t("navbar:megaMenuItem8")} />
                         </ul>
@@ -268,7 +268,7 @@ const NavLink = ({ pageName, selected, locale, url }: any) => {
 };
 
 const MegaMenuLink = ({ pageName }: any) => {
-  return <li className="">{pageName}</li>;
+  return <li className="my-0.5">{pageName}</li>;
 };
 
 const LangLink = ({ langName, selected }: any) => {
