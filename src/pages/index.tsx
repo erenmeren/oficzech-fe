@@ -8,8 +8,8 @@ import { Controller } from "swiper";
 
 import "swiper/css";
 
-import heroImg from "@assets/images/hero2.png";
-import heroImg2 from "@assets/images/hero.png";
+import heroImg from "@assets/images/hero.png";
+// import heroImg2 from "@assets/images/hero2.png";
 import Service1Img from "@assets/images/services-1.png";
 import Service2Img from "@assets/images/services-2.png";
 import Service3Img from "@assets/images/services-3.png";

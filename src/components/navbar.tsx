@@ -35,15 +35,41 @@ export default function Navbar() {
       transition duration-300 
       ${
         clientWindowHeight !== 0
-          ? "lg:border-b lg:bg-white"
-          : "lg:shadow-none lg:bg-black/80 lg:text-white"
+          ? "border-b bg-white"
+          : "shadow-none bg-black/80 text-white"
       } `}
     >
-      {/* sm:bg-orange-300 
-      md:bg-pink-300 
-      lg:bg-blue-300 
-      xl:bg-rose-300
-      2xl:bg-teal-600 */}
+      <div className="flex justify-between w-full padX text-[10px] mt-2.5 lg:hidden">
+        <div className="flex">
+          <PhoneIcon
+            alt="Phone icon"
+            width={10}
+            height={10}
+            className={`mr-[5px] mt-[2px]`}
+            fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
+          />
+          <span>+420 605 960 700</span>
+        </div>
+        <div className="flex">
+          <LetterIcon
+            width={10}
+            height={10}
+            fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
+            className="mr-[5px] mt-[2px]"
+          />
+          <span>info@oficzech.com</span>
+        </div>
+        <div className="flex">
+          <PinIcon
+            alt="Address icon"
+            width={10}
+            height={10}
+            fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
+            className="mr-[5px] mt-[2px]"
+          />
+          <span>Ostrovského 253/3</span>
+        </div>
+      </div>
       <div className="flex justify-between w-full padX text-[13px]">
         <div className="self-center">
           <Logo
@@ -56,7 +82,7 @@ export default function Navbar() {
 
         {/* normal menu */}
         <div className="self-center ">
-          <div className="flex justify-end mt-2.5 hidden lg:flex ">
+          <div className="flex justify-end mt-2.5 hidden lg:flex">
             <div className="flex mx-6 ">
               <PhoneIcon
                 alt="Phone icon"
@@ -243,7 +269,13 @@ export default function Navbar() {
           </div>
           {/* Mobile menu */}
           <div className="lg:hidden flex justify-end self-center">
-            <div className="rounded-full self-center border-2 border-[var(--primary-color)] bg-white">
+            <div
+              className={`rounded-full self-center  ${
+                clientWindowHeight !== 0
+                  ? "border-[var(--primary-color)] border-2"
+                  : ""
+              } bg-white`}
+            >
               <MobileMenuIcon className="w-11 h-11" />
             </div>
           </div>
