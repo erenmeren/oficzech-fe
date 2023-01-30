@@ -136,7 +136,7 @@ export default function Navbar() {
                 leaveTo="transform opacity-0 scale-95"
               >
                 <Menu.Items
-                  className={`absolute -right-[239px] top-[9px] mt-7 px-8 pb-8 pt-2 w-[900px] origin-top-right rounded-b-md focus:outline-none     
+                  className={`absolute -right-[257px] top-[9px] mt-7 px-8 pb-8 pt-2 w-[847px] origin-top-right rounded-b-md focus:outline-none     
                 ${
                   clientWindowHeight !== 0
                     ? "shadow-2xl bg-white"

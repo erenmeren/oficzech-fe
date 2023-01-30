@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </div>
       {/* second page */}
-      <div className="grid place-items-center pb-32">
+      <div className="grid place-items-center pb-10">
         {/* contant & how we work */}
         <div className="w-full padX">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 ">

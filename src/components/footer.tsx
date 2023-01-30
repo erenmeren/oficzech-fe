@@ -19,20 +19,39 @@ export default function Footer() {
       <div className="grid place-items-center py-5">
         <div className="grid grid-cols-2 flex items-center w-full padX">
           <div className="flex font-medium">
-            {t("navbar:menuItem1")}
+            <Link href="/" locale={i18n.language}>
+              {t("navbar:menuItem1")}
+            </Link>
             <div className="mx-3">|</div>
-            {t("navbar:menuItem2")}
+            <Link href="/hakkimizda" locale={i18n.language}>
+              {t("navbar:menuItem2")}
+            </Link>
             <div className="mx-3">|</div>
-            {t("navbar:menuItem3")}
+            <Link href="/" locale={i18n.language}>
+              {t("navbar:menuItem3")}
+            </Link>
             <div className="mx-3">|</div>
-            {t("navbar:menuItem4")}
+            <Link href="/blog" locale={i18n.language}>
+              {t("navbar:menuItem4")}
+            </Link>
             <div className="mx-3">|</div>
-            {t("navbar:menuItem5")}
+            <Link href="/iletisim" locale={i18n.language}>
+              {t("navbar:menuItem5")}
+            </Link>
           </div>
           <div className="flex justify-end ">
-            <LinkedInSVG className="h-8 w-8" />
-            <InstagramSVG className="h-8 w-8 mx-5" />
-            <FacebookSVG className="h-8 w-8" />
+            <Link
+              href="https://www.linkedin.com/company/oficzech/about/"
+              target="_blank"
+            >
+              <LinkedInSVG className="h-8 w-8" />
+            </Link>
+            <Link href="https://www.instagram.com/oficzech/" target="_blank">
+              <InstagramSVG className="h-8 w-8 mx-5" />
+            </Link>
+            <Link href="https://www.facebook.com/oficzech/" target="_blank">
+              <FacebookSVG className="h-8 w-8" />
+            </Link>
           </div>
         </div>
       </div>
@@ -40,55 +59,53 @@ export default function Footer() {
       <div className="grid place-items-center">
         <div className="w-full padX">
           <div className="w-full border-b-2 border-[#C3C3C3]"></div>
-          <div className="grid grid-cols-4 py-5">
+          <div className="grid grid-cols-4 py-5 text-[13px]">
             <div>
               <div className="font-bold">{t("navbar:megaMenuHeader1")}</div>
-              <ul className="list-disc list-inside mt-1 font-normal">
-                <li>{t("navbar:megaMenuItem1")}</li>
-                <li>{t("navbar:megaMenuItem2")}</li>
-                <li>{t("navbar:megaMenuItem3")}</li>
-                <li>{t("navbar:megaMenuItem4")}</li>
-                <li>{t("navbar:megaMenuItem5")}</li>
-                <li>{t("navbar:megaMenuItem6")}</li>
-                <li>{t("navbar:megaMenuItem17")}</li>
+              <ul className="mt-1.5">
+                <li className="my-0.5">{t("navbar:megaMenuItem1")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem2")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem3")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem4")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem5")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem6")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem17")}</li>
               </ul>
             </div>
             <div>
               <div className="font-bold">{t("navbar:megaMenuHeader3")}</div>
-              <ul className="list-disc list-inside mt-1 font-normal">
-                <li>{t("navbar:megaMenuItem9")}</li>
-                <li> {t("navbar:megaMenuItem10")}</li>
-                <li> {t("navbar:megaMenuItem11")}</li>
-                <li> {t("navbar:megaMenuItem12")}</li>
+              <ul className="mt-1.5">
+                <li className="my-0.5">{t("navbar:megaMenuItem9")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem10")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem11")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem12")}</li>
               </ul>
             </div>
             <div>
               <div className="font-bold">{t("navbar:megaMenuHeader6")}</div>
-              <ul className="list-disc list-inside mt-1 font-normal">
-                <li>{t("navbar:megaMenuItem15")}</li>
-                <li>{t("navbar:megaMenuItem16")}</li>
+              <ul className="mt-1.5">
+                <li className="my-0.5">{t("navbar:megaMenuItem15")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem16")}</li>
               </ul>
-              <div className="font-bold mt-4">
+              <div className="font-bold mt-3">
                 {t("navbar:megaMenuHeader2")}
               </div>
-              <ul className="list-disc list-inside mt-1 font-normal">
-                <li>{t("navbar:megaMenuItem7")}</li>
-                <li>{t("navbar:megaMenuItem8")}</li>
+              <ul className="mt-1.5">
+                <li className="my-0.5">{t("navbar:megaMenuItem7")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem8")}</li>
               </ul>
             </div>
             <div>
-              <div className="font-bold mt-3">
-                {t("navbar:megaMenuHeader7")}
-              </div>
+              <div className="font-bold">{t("navbar:megaMenuHeader7")}</div>
               <div className="font-bold mt-3">
                 {t("navbar:megaMenuHeader4")}
               </div>
-              <div className="font-bold mt-4">
+              <div className="font-bold mt-3">
                 {t("navbar:megaMenuHeader5")}
               </div>
-              <ul className="list-disc list-inside mt-1 font-normal">
-                <li>{t("navbar:megaMenuItem13")}</li>
-                <li>{t("navbar:megaMenuItem14")}</li>
+              <ul className="mt-1.5">
+                <li className="my-0.5">{t("navbar:megaMenuItem13")}</li>
+                <li className="my-0.5">{t("navbar:megaMenuItem14")}</li>
               </ul>
             </div>
           </div>
@@ -98,7 +115,7 @@ export default function Footer() {
       <div className="bg-[#7A8192] w-full">
         <div className="grid place-items-center py-5">
           <div className="w-full padX grid flex items-center">
-            <div className="flex justify-start w-full">
+            <div className="flex justify-start w-full text-[13px]">
               <div className="flex mr-5 font-bold text-white">
                 <PhoneIcon
                   alt="Phone icon"
@@ -107,7 +124,7 @@ export default function Footer() {
                   className={`mr-[5px]`}
                   fill={`#fff`}
                 />
-                <span className="text-sm">+420 605 960 700</span>
+                <span className="">+420 605 960 700</span>
               </div>
               <div className="flex mx-5 font-bold text-white">
                 <LetterIcon
@@ -116,7 +133,7 @@ export default function Footer() {
                   fill={`#fff`}
                   className="mr-[5px]"
                 />
-                <span className="text-sm font-bold">info@oficzech.com</span>
+                <span className="font-bold">info@oficzech.com</span>
               </div>
               <div className="flex ml-5 font-bold text-white">
                 <PinIcon
@@ -126,7 +143,7 @@ export default function Footer() {
                   fill={`#fff`}
                   className="mr-[5px]"
                 />
-                <span className="text-sm font-bold">
+                <span className="font-bold">
                   Ostrovského 253/3, Ženské Domovy, Prag
                 </span>
               </div>
@@ -136,18 +153,10 @@ export default function Footer() {
       </div>
       {/* step 4 */}
       <div className="grid place-items-center py-5">
-        <div className="w-full padX grid grid-cols-2 flex items-center">
+        <div className="w-full padX grid grid-cols-2 flex items-center text-[13px]">
           Copyright © {new Date().getFullYear()} Oficzech {t("footer:rights")}
         </div>
       </div>
     </div>
   );
 }
-
-const NavLink = ({ pageName, locale, url }: any) => {
-  return (
-    <Link href={url} locale={locale} className={``}>
-      <span>{pageName}</span>
-    </Link>
-  );
-};
