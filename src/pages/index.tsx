@@ -69,27 +69,18 @@ export default function Home() {
                   {t("home:title1")}
                 </p>
                 <p className="my-6 text-lg lg:text-xl">{t("home:title1Exp")}</p>
-                {/* <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold hidden lg:block">
-                  {t("common:contactForm")}
-                </p> */}
               </SwiperSlide>
               <SwiperSlide>
                 <p className="text-5xl font-bold lg:text-8xl">
                   2-{t("home:title1")}
                 </p>
                 <p className="my-6 text-xl">2-{t("home:title1Exp")}</p>
-                {/* <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold hidden lg:block">
-                  2-{t("common:contactForm")}
-                </p> */}
               </SwiperSlide>
               <SwiperSlide>
                 <p className="text-5xl font-bold lg:text-8xl">
                   3-{t("home:title1")}
                 </p>
                 <p className="my-6 text-xl">3-{t("home:title1Exp")}</p>
-                {/* <p className="h-14 w-52 my-4 pt-3 rounded-md bg-[var(--primary-color)] text-xl text-center font-bold hidden lg:block">
-                  3-{t("common:contactForm")}
-                </p> */}
               </SwiperSlide>
             </Swiper>
           </div>
@@ -210,7 +201,7 @@ export default function Home() {
             urlText={t("home:allPost")}
           />
           <ScrollAnimation>
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 ">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               <BlogCard
                 header={t("home:blogHeader1")}
                 text={t("home:blogExp1")}
@@ -233,7 +224,7 @@ export default function Home() {
           </ScrollAnimation>
         </div>
         {/* Hizmetlerimiz */}
-        <div className="my-28 w-full padX">
+        <div className="my-20 w-full padX">
           <PageHeader
             name={t("navbar:menuItem3")}
             pageURL="/hizmetlerimiz"
@@ -245,7 +236,7 @@ export default function Home() {
               <div>
                 <Swiper
                   // slidesPerView={4}
-                  spaceBetween={20}
+                  spaceBetween={10}
                   // loop={true}
                   autoplay={{ delay: 10000 }}
                   modules={[Controller]}

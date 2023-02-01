@@ -9,6 +9,16 @@ import PinIcon from "@assets/images/icons/pinIcon.svg";
 import FacebookSVG from "@assets/images/icons/facebook.svg";
 import InstagramSVG from "@assets/images/icons/instagram.svg";
 import LinkedInSVG from "@assets/images/icons/linkedin.svg";
+import DownIcon from "@assets/images/icons/down.svg";
+import { Disclosure, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+
+{
+  /* <DownIcon
+  className="w-2 h-2 mt-1.5 ml-1"
+  fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
+/>; */
+}
 
 export default function Footer() {
   const router = useRouter();
@@ -17,8 +27,14 @@ export default function Footer() {
     <div className="bg-[#F4F5F6]">
       {/* step 1 */}
       <div className="grid place-items-center py-5">
-        <div className="grid grid-cols-2 flex items-center w-full padX">
-          <div className="flex font-medium">
+        <div
+          className="grid grid-cols-1 flex items-center w-full padX 
+                        lg:grid-cols-2"
+        >
+          <div
+            className="flex text-sm font-medium justify-center
+                  lg:text-base lg:justify-start"
+          >
             <Link href="/" locale={i18n.language}>
               {t("navbar:menuItem1")}
             </Link>
@@ -39,18 +55,21 @@ export default function Footer() {
               {t("navbar:menuItem5")}
             </Link>
           </div>
-          <div className="flex justify-end ">
+          <div
+            className="flex justify-center mt-5 
+                      lg:justify-end lg:mt-0"
+          >
             <Link
               href="https://www.linkedin.com/company/oficzech/about/"
               target="_blank"
             >
-              <LinkedInSVG className="h-8 w-8" />
+              <LinkedInSVG className="h-9 w-9 lg:w-8 lg:h-8" />
             </Link>
             <Link href="https://www.instagram.com/oficzech/" target="_blank">
-              <InstagramSVG className="h-8 w-8 mx-5" />
+              <InstagramSVG className="h-9 w-9 mx-5 lg:w-8 lg:h-8" />
             </Link>
             <Link href="https://www.facebook.com/oficzech/" target="_blank">
-              <FacebookSVG className="h-8 w-8" />
+              <FacebookSVG className="h-9 w-9 lg:w-8 lg:h-8" />
             </Link>
           </div>
         </div>
@@ -59,9 +78,50 @@ export default function Footer() {
       <div className="grid place-items-center">
         <div className="w-full padX">
           <div className="w-full border-b-2 border-[#C3C3C3]"></div>
-          <div className="grid grid-cols-4 py-5 text-[13px]">
+          <div className="grid grid-cols-1 py-5 text-[13px] lg:grid-cols-4">
+            <Disclosure as="div" defaultOpen={true} className="lg:hidden">
+              {({ open }) => (
+                <>
+                  <Disclosure.Button as={Fragment}>
+                    <div className="flex font-bold">
+                      {t("navbar:megaMenuHeader1")}
+                      <DownIcon
+                        className={`w-2 h-2 mt-1.5 ml-2 lg:hidden ${
+                          open ? " rotate-180 transform" : ""
+                        }`}
+                        fill="#7A8192"
+                      />
+                    </div>
+                  </Disclosure.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Disclosure.Panel as="ul" className="mt-1.5" static={false}>
+                      <li className="my-0.5">{t("navbar:megaMenuItem1")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem2")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem3")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem4")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem5")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem6")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem17")}</li>
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              )}
+            </Disclosure>
             <div>
-              <div className="font-bold">{t("navbar:megaMenuHeader1")}</div>
+              <div className="flex font-bold">
+                {t("navbar:megaMenuHeader1")}
+                <DownIcon
+                  className="w-2 h-2 mt-1.5 ml-2 lg:hidden"
+                  fill="#7A8192"
+                />
+              </div>
               <ul className="mt-1.5">
                 <li className="my-0.5">{t("navbar:megaMenuItem1")}</li>
                 <li className="my-0.5">{t("navbar:megaMenuItem2")}</li>
@@ -73,7 +133,13 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <div className="font-bold">{t("navbar:megaMenuHeader3")}</div>
+              <div className="flex font-bold">
+                {t("navbar:megaMenuHeader3")}
+                <DownIcon
+                  className="w-2 h-2 mt-1.5 ml-2 lg:hidden"
+                  fill="#7A8192"
+                />
+              </div>
               <ul className="mt-1.5">
                 <li className="my-0.5">{t("navbar:megaMenuItem9")}</li>
                 <li className="my-0.5">{t("navbar:megaMenuItem10")}</li>
@@ -82,13 +148,23 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <div className="font-bold">{t("navbar:megaMenuHeader6")}</div>
+              <div className="flex font-bold">
+                {t("navbar:megaMenuHeader6")}
+                <DownIcon
+                  className="w-2 h-2 mt-1.5 ml-2 lg:hidden"
+                  fill="#7A8192"
+                />
+              </div>
               <ul className="mt-1.5">
                 <li className="my-0.5">{t("navbar:megaMenuItem15")}</li>
                 <li className="my-0.5">{t("navbar:megaMenuItem16")}</li>
               </ul>
-              <div className="font-bold mt-3">
+              <div className="flex font-bold mt-3">
                 {t("navbar:megaMenuHeader2")}
+                <DownIcon
+                  className="w-2 h-2 mt-1.5 ml-2 lg:hidden"
+                  fill="#7A8192"
+                />
               </div>
               <ul className="mt-1.5">
                 <li className="my-0.5">{t("navbar:megaMenuItem7")}</li>
@@ -100,8 +176,12 @@ export default function Footer() {
               <div className="font-bold mt-3">
                 {t("navbar:megaMenuHeader4")}
               </div>
-              <div className="font-bold mt-3">
+              <div className="flex font-bold mt-3">
                 {t("navbar:megaMenuHeader5")}
+                <DownIcon
+                  className="w-2 h-2 mt-1.5 ml-2 lg:hidden"
+                  fill="#7A8192"
+                />
               </div>
               <ul className="mt-1.5">
                 <li className="my-0.5">{t("navbar:megaMenuItem13")}</li>
@@ -113,10 +193,10 @@ export default function Footer() {
       </div>
       {/* step 3 */}
       <div className="bg-[#7A8192] w-full">
-        <div className="grid place-items-center py-5">
+        <div className="grid place-items-center lg:py-5">
           <div className="w-full padX grid flex items-center">
-            <div className="flex justify-start w-full text-[13px]">
-              <div className="flex mr-5 font-bold text-white">
+            <div className="justify-start w-full text-[13px] lg:flex">
+              <div className="flex mt-3 mb-4 font-bold text-white lg:mb-0 lg:mt-0 lg:mr-5">
                 <PhoneIcon
                   alt="Phone icon"
                   width={17}
@@ -126,7 +206,7 @@ export default function Footer() {
                 />
                 <span className="">+420 605 960 700</span>
               </div>
-              <div className="flex mx-5 font-bold text-white">
+              <div className="flex mb-4 font-bold text-white lg:mx-5 lg:mb-0">
                 <LetterIcon
                   width={20}
                   height={20}
@@ -135,7 +215,7 @@ export default function Footer() {
                 />
                 <span className="font-bold">info@oficzech.com</span>
               </div>
-              <div className="flex ml-5 font-bold text-white">
+              <div className="flex mb-3 font-bold text-white lg:ml-5 lg:mb-0">
                 <PinIcon
                   alt="Address icon"
                   width={20}
@@ -153,7 +233,7 @@ export default function Footer() {
       </div>
       {/* step 4 */}
       <div className="grid place-items-center py-5">
-        <div className="w-full padX grid grid-cols-2 flex items-center text-[13px]">
+        <div className="w-full padX grid grid-cols-1 lg:grid-cols-2 flex items-center text-[13px]">
           Copyright © {new Date().getFullYear()} Oficzech {t("footer:rights")}
         </div>
       </div>

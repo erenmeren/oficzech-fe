@@ -11,6 +11,7 @@ import PhoneIcon from "@assets/images/icons/phoneIcon.svg";
 import LetterIcon from "@assets/images/icons/letter.svg";
 import PinIcon from "@assets/images/icons/pinIcon.svg";
 import MobileMenuIcon from "@assets/images/icons/mobileMenu.svg";
+import DownIcon from "@assets/images/icons/down.svg";
 
 export default function Navbar() {
   const router = useRouter();
@@ -136,19 +137,10 @@ export default function Navbar() {
                 >
                   {t("navbar:menuItem3")}
                   <div className="">
-                    <svg
-                      className="w-5 h-5 "
-                      aria-hidden="true"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
+                    <DownIcon
+                      className="w-2 h-2 mt-1.5 ml-1"
+                      fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
+                    />
                   </div>
                 </Menu.Button>
               </div>
