@@ -12,11 +12,13 @@ import LetterIcon from "@assets/images/icons/letter.svg";
 import PinIcon from "@assets/images/icons/pinIcon.svg";
 import MobileMenuIcon from "@assets/images/icons/mobileMenu.svg";
 import DownIcon from "@assets/images/icons/down.svg";
+import CrossIcon from "@assets/images/icons/cross.svg";
 
 export default function Navbar() {
   const router = useRouter();
   const { t, i18n } = useTranslation();
 
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [clientWindowHeight, setClientWindowHeight] = useState(0);
 
   const handleScroll = () => {
@@ -83,7 +85,7 @@ export default function Navbar() {
 
         {/* normal menu */}
         <div className="self-center ">
-          <div className="flex justify-end mt-2.5 hidden lg:flex">
+          <div className="hidden justify-end mt-2.5  lg:flex">
             <div className="flex mx-6 ">
               <PhoneIcon
                 alt="Phone icon"
@@ -114,7 +116,7 @@ export default function Navbar() {
               <span>Ostrovského 253/3</span>
             </div>
           </div>
-          <div className="flex justify-end mt-6 mb-3.5 grid place-items-center hidden lg:flex">
+          <div className="hidden justify-end mt-6 mb-3.5 place-items-center lg:flex">
             <NavLink
               pageName={t("navbar:menuItem1")}
               selected={router.asPath === "/"}
@@ -260,15 +262,20 @@ export default function Navbar() {
             </div>
           </div>
           {/* Mobile menu */}
-          <div className="lg:hidden flex justify-end self-center">
+          <div className="lg:hidden flex justify-end">
             <div
-              className={`rounded-full self-center  ${
+              className={`rounded-full grid justify-center items-center cursor-pointer h-11 w-11 ${
                 clientWindowHeight !== 0
                   ? "border-[var(--primary-color)] border-2"
                   : ""
               } bg-white`}
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
             >
-              <MobileMenuIcon className="w-11 h-11" />
+              {showMobileMenu ? (
+                <CrossIcon className="w-4 h-4" />
+              ) : (
+                <MobileMenuIcon className="w-11 h-11" />
+              )}
             </div>
           </div>
         </div>

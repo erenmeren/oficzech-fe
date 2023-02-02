@@ -78,8 +78,11 @@ export default function Footer() {
       <div className="grid place-items-center">
         <div className="w-full padX">
           <div className="w-full border-b-2 border-[#C3C3C3]"></div>
-          <div className="grid grid-cols-1 py-5 text-[13px] lg:grid-cols-4">
-            <Disclosure as="div" defaultOpen={true} className="lg:hidden">
+          <div className="grid grid-cols-1 py-5 text-[12px] lg:text-[13px] lg:grid-cols-4">
+            <Disclosure
+              as="div"
+              className="cursor-pointer mb-3.5 lg:hidden lg:cursor-auto"
+            >
               {({ open }) => (
                 <>
                   <Disclosure.Button as={Fragment}>
@@ -114,7 +117,153 @@ export default function Footer() {
                 </>
               )}
             </Disclosure>
-            <div>
+
+            <Disclosure
+              as="div"
+              className="cursor-pointer mb-3.5 lg:hidden lg:cursor-auto"
+            >
+              {({ open }) => (
+                <>
+                  <Disclosure.Button as={Fragment}>
+                    <div className="flex font-bold">
+                      {t("navbar:megaMenuHeader3")}
+                      <DownIcon
+                        className={`w-2 h-2 mt-1.5 ml-2 lg:hidden ${
+                          open ? " rotate-180 transform" : ""
+                        }`}
+                        fill="#7A8192"
+                      />
+                    </div>
+                  </Disclosure.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Disclosure.Panel as="ul" className="mt-1.5" static={false}>
+                      <li className="my-0.5">{t("navbar:megaMenuItem9")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem10")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem11")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem12")}</li>
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              )}
+            </Disclosure>
+
+            <Disclosure
+              as="div"
+              className="cursor-pointer mb-3.5 lg:hidden lg:cursor-auto"
+            >
+              {({ open }) => (
+                <>
+                  <Disclosure.Button as={Fragment}>
+                    <div className="flex font-bold">
+                      {t("navbar:megaMenuHeader6")}
+                      <DownIcon
+                        className={`w-2 h-2 mt-1.5 ml-2 lg:hidden ${
+                          open ? " rotate-180 transform" : ""
+                        }`}
+                        fill="#7A8192"
+                      />
+                    </div>
+                  </Disclosure.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Disclosure.Panel as="ul" className="mt-1.5" static={false}>
+                      <li className="my-0.5">{t("navbar:megaMenuItem15")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem16")}</li>
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              )}
+            </Disclosure>
+
+            <Disclosure
+              as="div"
+              className="cursor-pointer mb-3.5 lg:hidden lg:cursor-auto"
+            >
+              {({ open }) => (
+                <>
+                  <Disclosure.Button as={Fragment}>
+                    <div className="flex font-bold">
+                      {t("navbar:megaMenuHeader2")}
+                      <DownIcon
+                        className={`w-2 h-2 mt-1.5 ml-2 lg:hidden ${
+                          open ? " rotate-180 transform" : ""
+                        }`}
+                        fill="#7A8192"
+                      />
+                    </div>
+                  </Disclosure.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Disclosure.Panel as="ul" className="mt-1.5" static={false}>
+                      <li className="my-0.5">{t("navbar:megaMenuItem7")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem8")}</li>
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              )}
+            </Disclosure>
+
+            <div className="font-bold mb-3.5 lg:hidden">
+              {t("navbar:megaMenuHeader7")}
+            </div>
+            <div className="font-bold mb-3.5 lg:hidden">
+              {t("navbar:megaMenuHeader4")}
+            </div>
+
+            <Disclosure
+              as="div"
+              className="cursor-pointer lg:hidden lg:cursor-auto"
+            >
+              {({ open }) => (
+                <>
+                  <Disclosure.Button as={Fragment}>
+                    <div className="flex font-bold">
+                      {t("navbar:megaMenuHeader5")}
+                      <DownIcon
+                        className={`w-2 h-2 mt-1.5 ml-2 lg:hidden ${
+                          open ? " rotate-180 transform" : ""
+                        }`}
+                        fill="#7A8192"
+                      />
+                    </div>
+                  </Disclosure.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Disclosure.Panel as="ul" className="mt-1.5" static={false}>
+                      <li className="my-0.5">{t("navbar:megaMenuItem13")}</li>
+                      <li className="my-0.5">{t("navbar:megaMenuItem14")}</li>
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              )}
+            </Disclosure>
+
+            <div className="hidden lg:block">
               <div className="flex font-bold">
                 {t("navbar:megaMenuHeader1")}
                 <DownIcon
@@ -123,16 +272,16 @@ export default function Footer() {
                 />
               </div>
               <ul className="mt-1.5">
-                <li className="my-0.5">{t("navbar:megaMenuItem1")}</li>
-                <li className="my-0.5">{t("navbar:megaMenuItem2")}</li>
-                <li className="my-0.5">{t("navbar:megaMenuItem3")}</li>
-                <li className="my-0.5">{t("navbar:megaMenuItem4")}</li>
-                <li className="my-0.5">{t("navbar:megaMenuItem5")}</li>
-                <li className="my-0.5">{t("navbar:megaMenuItem6")}</li>
-                <li className="my-0.5">{t("navbar:megaMenuItem17")}</li>
+                <li>{t("navbar:megaMenuItem1")} </li>
+                <li>{t("navbar:megaMenuItem2")} </li>
+                <li>{t("navbar:megaMenuItem3")} </li>
+                <li>{t("navbar:megaMenuItem4")} </li>
+                <li>{t("navbar:megaMenuItem5")} </li>
+                <li>{t("navbar:megaMenuItem6")} </li>
+                <li>{t("navbar:megaMenuItem17")} </li>
               </ul>
             </div>
-            <div>
+            <div className="hidden lg:block">
               <div className="flex font-bold">
                 {t("navbar:megaMenuHeader3")}
                 <DownIcon
@@ -147,7 +296,7 @@ export default function Footer() {
                 <li className="my-0.5">{t("navbar:megaMenuItem12")}</li>
               </ul>
             </div>
-            <div>
+            <div className="hidden lg:block">
               <div className="flex font-bold">
                 {t("navbar:megaMenuHeader6")}
                 <DownIcon
@@ -171,7 +320,7 @@ export default function Footer() {
                 <li className="my-0.5">{t("navbar:megaMenuItem8")}</li>
               </ul>
             </div>
-            <div>
+            <div className="hidden lg:block">
               <div className="font-bold">{t("navbar:megaMenuHeader7")}</div>
               <div className="font-bold mt-3">
                 {t("navbar:megaMenuHeader4")}
