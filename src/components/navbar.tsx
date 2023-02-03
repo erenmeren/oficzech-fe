@@ -3,16 +3,14 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 
-import { Menu, Transition } from "@headlessui/react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
 import Logo from "@assets/images/logo.svg";
 import PhoneIcon from "@assets/images/icons/phoneIcon.svg";
 import LetterIcon from "@assets/images/icons/letter.svg";
 import PinIcon from "@assets/images/icons/pinIcon.svg";
-import MobileMenuIcon from "@assets/images/icons/mobileMenu.svg";
 import DownIcon from "@assets/images/icons/down.svg";
-import CrossIcon from "@assets/images/icons/cross.svg";
 
 export default function Navbar() {
   const router = useRouter();
@@ -264,22 +262,114 @@ export default function Navbar() {
           {/* Mobile menu */}
           <div className="lg:hidden flex justify-end">
             <div
-              className={`rounded-full grid justify-center items-center cursor-pointer h-11 w-11 ${
-                clientWindowHeight !== 0
-                  ? "border-[var(--primary-color)] border-2"
-                  : ""
-              } bg-white`}
+              className={`rounded-full grid justify-center items-center cursor-pointer h-11 w-11 bg-white`}
               onClick={() => setShowMobileMenu(!showMobileMenu)}
             >
-              {showMobileMenu ? (
-                <CrossIcon className="w-4 h-4" />
-              ) : (
-                <MobileMenuIcon className="w-11 h-11" />
-              )}
+              <div
+                className={`flex items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-white ring-opacity-30 duration-200 shadow-xl`}
+              >
+                <div
+                  className={`flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center ${
+                    showMobileMenu ? "-rotate-[45deg]" : ""
+                  }`}
+                >
+                  <div
+                    className={`bg-black h-[2px] w-1/2 rounded transform transition-all duration-300  origin-right delay-75 ${
+                      showMobileMenu
+                        ? "-rotate-90 h-[2px] -translate-y-[1px]"
+                        : ""
+                    }`}
+                  ></div>
+                  <div className={`bg-black h-[2px] rounded`}></div>
+                  <div
+                    className={`bg-black h-[2px] w-1/2 rounded self-end transform transition-all duration-300 origin-left delay-75 ${
+                      showMobileMenu
+                        ? "-rotate-90 h-[2px] translate-y-[1px]"
+                        : ""
+                    }`}
+                  ></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <aside
+        className={`transform top-[105px] left-0 right-0 h-0 text-[13px]
+        fixed overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-0 
+        ${showMobileMenu ? "h-[300px]" : ""} 
+        ${clientWindowHeight !== 0 ? "bg-white" : "bg-black/80 text-white"} `}
+      >
+        <div className="text-center mb-[30px]">
+          <NavLink
+            pageName={t("navbar:menuItem1")}
+            selected={router.asPath === "/"}
+            locale={i18n.language}
+            url="/"
+          />
+        </div>
+
+        <div className="text-center mb-[30px]">
+          <NavLink
+            pageName={t("navbar:menuItem2")}
+            selected={router.asPath === "/hakkimizda"}
+            locale={i18n.language}
+            url="/hakkimizda"
+          />
+        </div>
+        <div className="grid justify-center">
+          <Disclosure as="div" className="cursor-pointer mb-[30px] pl-5">
+            <Disclosure.Button as={Fragment}>
+              <div className="flex text-center font-bold">
+                {t("navbar:menuItem3")}
+                <DownIcon className={`w-3 h-3 mt-1 ml-2`} fill="#fff" />
+              </div>
+            </Disclosure.Button>
+            <Transition
+              enter="transition duration-100 ease-out"
+              enterFrom="transform scale-95 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-75 ease-out"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-95 opacity-0"
+            >
+              <Disclosure.Panel className="mt-1.5" static={false}>
+                <div>{t("navbar:megaMenuHeader1")}</div>
+                <div>{t("navbar:megaMenuHeader2")}</div>
+                <div>{t("navbar:megaMenuHeader3")}</div>
+                <div>{t("navbar:megaMenuHeader4")}</div>
+                <div>{t("navbar:megaMenuHeader5")}</div>
+                <div>{t("navbar:megaMenuHeader6")}</div>
+                <div>{t("navbar:megaMenuHeader7")}</div>
+              </Disclosure.Panel>
+            </Transition>
+          </Disclosure>
+        </div>
+
+        <div className="text-center mb-[30px]">
+          <NavLink
+            pageName={t("navbar:menuItem4")}
+            selected={router.asPath === "/blog"}
+            locale={i18n.language}
+            url="/blog"
+          />
+        </div>
+        <div className="text-center mb-[30px]">
+          <NavLink
+            pageName={t("navbar:menuItem5")}
+            selected={false}
+            locale={i18n.language}
+            url="/iletisim"
+          />
+        </div>
+        <div className="flex justify-center">
+          {router.locales?.map((locale) => (
+            <Link href={router.asPath} locale={locale} key={locale}>
+              <LangLink langName={locale} selected={locale === i18n.language} />
+            </Link>
+          ))}
+        </div>
+      </aside>
     </div>
   );
 }

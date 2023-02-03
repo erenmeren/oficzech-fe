@@ -343,7 +343,7 @@ export default function Footer() {
       {/* step 3 */}
       <div className="bg-[#7A8192] w-full">
         <div className="grid place-items-center lg:py-5">
-          <div className="w-full padX grid flex items-center">
+          <div className="w-full padX flex items-center">
             <div className="justify-start w-full text-[13px] lg:flex">
               <div className="flex mt-3 mb-4 font-bold text-white lg:mb-0 lg:mt-0 lg:mr-5">
                 <PhoneIcon
