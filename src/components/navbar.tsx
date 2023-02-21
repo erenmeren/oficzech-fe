@@ -71,12 +71,11 @@ export default function Navbar() {
           <span>Ostrovského 253/3</span>
         </div>
       </div>
-      <div className="flex justify-between w-full padX text-[13px]">
+      <div className="flex justify-between w-full padX text-[13px] my-[18px] lg:my-0">
         <div className="self-center">
           <Logo
             alt="Oficzech Logo"
-            width={100}
-            height={80}
+            className="w-[110px] h-[30px] lg:w-[155px] lg:h-[45px]"
             fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
           />
         </div>
@@ -266,7 +265,7 @@ export default function Navbar() {
               onClick={() => setShowMobileMenu(!showMobileMenu)}
             >
               <div
-                className={`flex items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-white ring-opacity-30 duration-200 shadow-xl`}
+                className={`flex items-center justify-center rounded-full w-[45px] h-[45px] transform transition-all bg-white ring-opacity-30 duration-200 shadow-xl`}
               >
                 <div
                   className={`flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center ${
@@ -274,17 +273,17 @@ export default function Navbar() {
                   }`}
                 >
                   <div
-                    className={`bg-black h-[2px] w-1/2 rounded transform transition-all duration-300  origin-right delay-75 ${
+                    className={`bg-black h-[3px] w-1/2 rounded transform transition-all duration-300  origin-right delay-75 ${
                       showMobileMenu
-                        ? "-rotate-90 h-[2px] -translate-y-[1px]"
+                        ? "-rotate-90 h-[3px] -translate-y-[2px]"
                         : ""
                     }`}
                   ></div>
-                  <div className={`bg-black h-[2px] rounded`}></div>
+                  <div className={`bg-black h-[3px] rounded`}></div>
                   <div
-                    className={`bg-black h-[2px] w-1/2 rounded self-end transform transition-all duration-300 origin-left delay-75 ${
+                    className={`bg-black h-[3px] w-1/2 rounded self-end transform transition-all duration-300 origin-left delay-75 ${
                       showMobileMenu
-                        ? "-rotate-90 h-[2px] translate-y-[1px]"
+                        ? "-rotate-90 h-[3px] translate-y-[2px]"
                         : ""
                     }`}
                   ></div>
@@ -295,7 +294,7 @@ export default function Navbar() {
         </div>
       </div>
       <aside
-        className={`transform top-[105px] left-0 right-0 h-0 text-[13px]
+        className={`transform top-[105px] left-0 right-0 h-0 text-[11px]
         fixed overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-0 
         ${showMobileMenu ? "h-[300px]" : ""} 
         ${clientWindowHeight !== 0 ? "bg-white" : "bg-black/80 text-white"} `}
