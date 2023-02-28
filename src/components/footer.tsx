@@ -39,7 +39,8 @@ export default function Footer() {
               {t("navbar:menuItem1")}
             </Link>
             <div className="mx-3">|</div>
-            <Link href="/hakkimizda" locale={i18n.language}>
+            <Link href="/#" locale={i18n.language}>
+              {/* <Link href="/hakkimizda" locale={i18n.language}> */}
               {t("navbar:menuItem2")}
             </Link>
             <div className="mx-3">|</div>
@@ -47,11 +48,13 @@ export default function Footer() {
               {t("navbar:menuItem3")}
             </Link>
             <div className="mx-3">|</div>
-            <Link href="/blog" locale={i18n.language}>
+            <Link href="/#" locale={i18n.language}>
+              {/* <Link href="/blog" locale={i18n.language}> */}
               {t("navbar:menuItem4")}
             </Link>
             <div className="mx-3">|</div>
-            <Link href="/iletisim" locale={i18n.language}>
+            <Link href="/#" locale={i18n.language}>
+              {/* <Link href="/iletisim" locale={i18n.language}> */}
               {t("navbar:menuItem5")}
             </Link>
           </div>

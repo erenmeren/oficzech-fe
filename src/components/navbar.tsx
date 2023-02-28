@@ -313,10 +313,10 @@ export default function Navbar() {
             pageName={t("navbar:menuItem2")}
             selected={router.asPath === "/hakkimizda"}
             locale={i18n.language}
-            url="/hakkimizda"
+            url="#"
           />
         </div>
-        <div className="grid justify-center">
+        {/* <div className="grid justify-center">
           <Disclosure as="div" className="cursor-pointer mb-[30px] pl-5">
             <Disclosure.Button as={Fragment}>
               <div className="flex text-center font-bold">
@@ -343,7 +343,7 @@ export default function Navbar() {
               </Disclosure.Panel>
             </Transition>
           </Disclosure>
-        </div>
+        </div> */}
 
         <div className="text-center mb-[30px]">
           <NavLink
@@ -358,7 +358,7 @@ export default function Navbar() {
             pageName={t("navbar:menuItem5")}
             selected={false}
             locale={i18n.language}
-            url="/iletisim"
+            url="#"
           />
         </div>
         <div className="flex justify-center">
