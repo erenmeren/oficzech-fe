@@ -75,7 +75,7 @@ export default function Navbar() {
         <div className="self-center">
           <Logo
             alt="Oficzech Logo"
-            className="w-[110px] h-[30px] lg:w-[155px] lg:h-[45px]"
+            className="w-[120px] h-[30px] lg:w-[200px] lg:h-[80px]"
             fill={`${clientWindowHeight !== 0 ? "#000" : "#fff"}`}
           />
         </div>
@@ -153,7 +153,7 @@ export default function Navbar() {
                 leaveTo="transform opacity-0 scale-95"
               >
                 <Menu.Items
-                  className={`absolute -right-[257px] top-[9px] mt-7 px-8 pb-8 pt-2 w-[847px] origin-top-right rounded-b-md focus:outline-none     
+                  className={`absolute -right-[264px] top-[9px] mt-7 px-8 pb-8 pt-2 w-[847px] origin-top-right rounded-b-md focus:outline-none     
                 ${
                   clientWindowHeight !== 0
                     ? "shadow-2xl bg-white"
@@ -376,7 +376,7 @@ export default function Navbar() {
 const NavLink = ({ pageName, selected, locale, url }: any) => {
   return (
     <Link
-      href={url}
+      href="#"
       locale={locale}
       className={`font-bold mx-6  ${
         selected ? "text-[var(--primary-color)]" : ""

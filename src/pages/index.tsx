@@ -21,6 +21,7 @@ import PuzzleIcon from "@assets/images/icons/puzzle.svg";
 import TargetIcon from "@assets/images/icons/target.svg";
 import { useState } from "react";
 import ScrollAnimation from "@components/ScrollAnimation";
+import ServicesCard from "@components/ServiceCard";
 
 export default function Home() {
   const router = useRouter();
@@ -76,12 +77,12 @@ export default function Home() {
                 </p>
                 <p className="my-6 text-xl">2-{t("home:title1Exp")}</p>
               </SwiperSlide>
-              <SwiperSlide>
+              {/* <SwiperSlide>
                 <p className="text-5xl font-bold lg:text-8xl">
                   3-{t("home:title1")}
                 </p>
                 <p className="my-6 text-xl">3-{t("home:title1Exp")}</p>
-              </SwiperSlide>
+              </SwiperSlide> */}
             </Swiper>
           </div>
           <div className="flex items-center justify-self-end">
@@ -194,7 +195,7 @@ export default function Home() {
           </div>
         </div>
         {/* Blog */}
-        <div className="mt-20 w-full padX">
+        {/* <div className="mt-20 w-full padX">
           <PageHeader
             name={t("navbar:menuItem4")}
             pageURL="/blog"
@@ -222,9 +223,9 @@ export default function Home() {
               />
             </div>
           </ScrollAnimation>
-        </div>
+        </div> */}
         {/* Hizmetlerimiz */}
-        <div className="my-20 w-full padX">
+        {/* <div className="my-20 w-full padX">
           <PageHeader
             name={t("navbar:menuItem3")}
             pageURL="/hizmetlerimiz"
@@ -264,6 +265,7 @@ export default function Home() {
                       img={Service1Img}
                       alt={t("navbar:megaMenuHeader1")}
                       name={t("navbar:megaMenuHeader1")}
+                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -271,6 +273,7 @@ export default function Home() {
                       img={Service2Img}
                       alt={t("navbar:megaMenuHeader6")}
                       name={t("navbar:megaMenuHeader6")}
+                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -278,6 +281,7 @@ export default function Home() {
                       img={Service3Img}
                       alt={t("navbar:megaMenuHeader3")}
                       name={t("navbar:megaMenuHeader4")}
+                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -285,6 +289,7 @@ export default function Home() {
                       img={Service3Img}
                       alt={t("navbar:megaMenuHeader4")}
                       name={t("navbar:megaMenuHeader4")}
+                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -292,6 +297,7 @@ export default function Home() {
                       img={Service2Img}
                       alt={t("navbar:megaMenuHeader2")}
                       name={t("navbar:megaMenuHeader2")}
+                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -299,13 +305,14 @@ export default function Home() {
                       img={Service3Img}
                       alt={t("navbar:megaMenuHeader7")}
                       name={t("navbar:megaMenuHeader7")}
+                      h={180}
                     />
                   </SwiperSlide>
                 </Swiper>
               </div>
             </div>
 
-            <div className="flex justify-center h-full mt-5 place-items-center hidden lg:flex">
+            <div className="hidden justify-center h-full mt-5 place-items-center lg:flex">
               <LeftArrowIcon
                 height={15}
                 width={15}
@@ -340,32 +347,34 @@ export default function Home() {
               />
             </div>
           </ScrollAnimation>
-        </div>
+        </div> */}
       </div>
     </>
   );
 }
 
-const ServicesCard = ({ name, img, alt }: any) => {
-  return (
-    <div className="bg-[#F4F5F6] rounded-lg">
-      <Image
-        src={img.src}
-        width={358}
-        height={250}
-        alt={alt}
-        className="rounded-t-lg w-full"
-      />
-      <div className="h-28 p-9 text-xl font-bold">{name}</div>
-    </div>
-  );
-};
+// const ServicesCard = ({ name, img, alt }: any) => {
+//   return (
+//     <div className="bg-[#F4F5F6] rounded-lg">
+//       <Image
+//         src={img.src}
+//         width={358}
+//         height={250}
+//         alt={alt}
+//         className="rounded-t-lg w-full"
+//       />
+//       <div className="h-28 p-9 text-xl font-bold">{name}</div>
+//     </div>
+//   );
+// };
 
 const PageHeader = ({ name, pageUrl, urlText }: any) => {
   return (
     <div className="relative mb-16">
-      <h1 className="text-6xl lg:text-8xl text-[#e6e8ec] font-bold">{name}</h1>
-      <h2 className="absolute text-3xl lg:text-5xl top-6 left-0.5 font-bold">
+      <h1 className="text-6xl lg:text-[85px] text-[#e6e8ec] font-bold">
+        {name}
+      </h1>
+      <h2 className="absolute text-3xl lg:text-5xl top-5 left-0.5 font-bold">
         {name}
       </h2>
       <a className="absolute text-[#3288FC] right-0 top-9">{urlText}</a>
