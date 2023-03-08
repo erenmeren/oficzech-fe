@@ -80,7 +80,7 @@ export default function Navbar() {
           />
         </div>
 
-        {/* normal menu */}
+        {/* big normal menu */}
         <div className="self-center ">
           <div className="hidden justify-end mt-2.5  lg:flex">
             <div className="flex mx-6 ">
@@ -299,7 +299,10 @@ export default function Navbar() {
         ${showMobileMenu ? "h-[300px]" : ""} 
         ${clientWindowHeight !== 0 ? "bg-white" : "bg-black/80 text-white"} `}
       >
-        <div className="text-center mb-[30px]">
+        <div
+          className="text-center mb-[30px]"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
           <NavLink
             pageName={t("navbar:menuItem1")}
             selected={router.asPath === "/"}
@@ -308,12 +311,26 @@ export default function Navbar() {
           />
         </div>
 
-        <div className="text-center mb-[30px]">
+        <div
+          className="text-center mb-[30px]"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
           <NavLink
             pageName={t("navbar:menuItem2")}
             selected={router.asPath === "/hakkimizda"}
             locale={i18n.language}
-            url="#"
+            url="/hakkimizda"
+          />
+        </div>
+        <div
+          className="text-center mb-[30px]"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
+          <NavLink
+            pageName={t("navbar:menuItem3")}
+            selected={router.asPath === "/hizmetlerimiz"}
+            locale={i18n.language}
+            url="/hizmetlerimiz"
           />
         </div>
         {/* <div className="grid justify-center">
@@ -345,7 +362,10 @@ export default function Navbar() {
           </Disclosure>
         </div> */}
 
-        <div className="text-center mb-[30px]">
+        <div
+          className="text-center mb-[30px]"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
           <NavLink
             pageName={t("navbar:menuItem4")}
             selected={router.asPath === "/blog"}
@@ -353,7 +373,10 @@ export default function Navbar() {
             url="/blog"
           />
         </div>
-        <div className="text-center mb-[30px]">
+        <div
+          className="text-center mb-[30px]"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
           <NavLink
             pageName={t("navbar:menuItem5")}
             selected={false}
@@ -361,7 +384,10 @@ export default function Navbar() {
             url="#"
           />
         </div>
-        <div className="flex justify-center">
+        <div
+          className="flex justify-center"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
           {router.locales?.map((locale) => (
             <Link href={router.asPath} locale={locale} key={locale}>
               <LangLink langName={locale} selected={locale === i18n.language} />
@@ -376,7 +402,7 @@ export default function Navbar() {
 const NavLink = ({ pageName, selected, locale, url }: any) => {
   return (
     <Link
-      href="#"
+      href={url}
       locale={locale}
       className={`font-bold mx-6  ${
         selected ? "text-[var(--primary-color)]" : ""

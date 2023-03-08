@@ -1,15 +1,16 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import ScrollAnimation from "@components/ScrollAnimation";
+import ServicesCard from "@components/ServiceCard";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 import { Controller } from "swiper";
-
 import "swiper/css";
 
 import heroImg from "@assets/images/hero.png";
-// import heroImg2 from "@assets/images/hero2.png";
 import Service1Img from "@assets/images/services-1.png";
 import Service2Img from "@assets/images/services-2.png";
 import Service3Img from "@assets/images/services-3.png";
@@ -19,9 +20,7 @@ import DocumentIcon from "@assets/images/icons/document.svg";
 import PeopleIcon from "@assets/images/icons/people.svg";
 import PuzzleIcon from "@assets/images/icons/puzzle.svg";
 import TargetIcon from "@assets/images/icons/target.svg";
-import { useState } from "react";
-import ScrollAnimation from "@components/ScrollAnimation";
-import ServicesCard from "@components/ServiceCard";
+import BlogCard from "@components/BlogCard";
 
 export default function Home() {
   const router = useRouter();
@@ -33,6 +32,24 @@ export default function Home() {
   const [secondSwiper, setSecondSwiper] = useState<any>(null);
   const [sliderCount, setSliderCount] = useState<number>(0);
 
+  const blogs = [
+    {
+      header: t("home:blogHeader1"),
+      text: t("home:blogExp1"),
+      url: "#",
+    },
+    {
+      header: t("home:blogHeader2"),
+      text: t("home:blogExp2"),
+      url: "#",
+    },
+    {
+      header: t("home:blogHeader3"),
+      text: t("home:blogExp3"),
+      url: "#",
+    },
+  ];
+
   const preCounter = (funcPrev: any) => {
     funcPrev;
     if (sliderCount > 0) setSliderCount(sliderCount - 1);
@@ -42,7 +59,7 @@ export default function Home() {
     <>
       {/* first page */}
       <div
-        className="grid place-items-center bg-cover min-h-[800px] h-screen lg:pb-[10%]"
+        className="grid place-items-center bg-cover bg-center min-h-[700px] h-[60%] lg:pb-[10%]"
         style={{ backgroundImage: `url(${heroImg.src})` }}
       >
         <div className="w-full padX grid grid-cols-12 text-white lg:mt-[200px]">
@@ -73,16 +90,10 @@ export default function Home() {
               </SwiperSlide>
               <SwiperSlide>
                 <p className="text-5xl font-bold lg:text-8xl">
-                  2-{t("home:title1")}
+                  {t("home:title2")}
                 </p>
-                <p className="my-6 text-xl">2-{t("home:title1Exp")}</p>
+                <p className="my-6 text-xl">2-{t("home:title2Exp")}</p>
               </SwiperSlide>
-              {/* <SwiperSlide>
-                <p className="text-5xl font-bold lg:text-8xl">
-                  3-{t("home:title1")}
-                </p>
-                <p className="my-6 text-xl">3-{t("home:title1Exp")}</p>
-              </SwiperSlide> */}
             </Swiper>
           </div>
           <div className="flex items-center justify-self-end">
@@ -105,14 +116,13 @@ export default function Home() {
         <div className="w-full padX">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 ">
             <div className="hidden lg:inline">
+              <HowWeWork
+                icon={<PuzzleIcon height={55} width={55} />}
+                header={t("home:howWeWorkHeader1")}
+                text={t("home:howWeWorkExp1")}
+                tailStyle="mt-20"
+              />
               <ScrollAnimation>
-                <HowWeWork
-                  icon={<PuzzleIcon height={55} width={55} />}
-                  header={t("home:howWeWorkHeader1")}
-                  text={t("home:howWeWorkExp1")}
-                  tailStyle="mt-20"
-                />
-
                 <HowWeWork
                   icon={<TargetIcon height={55} width={55} />}
                   header={t("home:howWeWorkHeader2")}
@@ -122,13 +132,13 @@ export default function Home() {
               </ScrollAnimation>
             </div>
             <div className="hidden lg:inline">
+              <HowWeWork
+                icon={<PeopleIcon height={55} width={80} />}
+                header={t("home:howWeWorkHeader3")}
+                text={t("home:howWeWorkExp3")}
+                tailStyle="mt-20"
+              />
               <ScrollAnimation>
-                <HowWeWork
-                  icon={<PeopleIcon height={55} width={80} />}
-                  header={t("home:howWeWorkHeader3")}
-                  text={t("home:howWeWorkExp3")}
-                  tailStyle="mt-20"
-                />
                 <HowWeWork
                   icon={<DocumentIcon height={55} width={55} />}
                   header={t("home:howWeWorkHeader4")}
@@ -195,40 +205,62 @@ export default function Home() {
           </div>
         </div>
         {/* Blog */}
-        {/* <div className="mt-20 w-full padX">
+        <div className="mt-20 w-full padX">
           <PageHeader
             name={t("navbar:menuItem4")}
-            pageURL="/blog"
+            url="/blog"
             urlText={t("home:allPost")}
           />
           <ScrollAnimation>
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-              <BlogCard
-                header={t("home:blogHeader1")}
-                text={t("home:blogExp1")}
-                pageURL="Jak"
-                urlText={t("home:readAll")}
-              />
-              <BlogCard
-                header={t("home:blogHeader2")}
-                text={t("home:blogExp2")}
-                pageURL="dd"
-                urlText={t("home:readAll")}
-              />
-              <BlogCard
-                header={t("home:blogHeader3")}
-                text={t("home:blogExp3")}
-                pageURL="aa"
-                urlText={t("home:readAll")}
-              />
+            <div className="grid grid-cols-1">
+              <div>
+                <Swiper
+                  // slidesPerView={4}
+                  spaceBetween={10}
+                  // loop={true}
+                  autoplay={{ delay: 10000 }}
+                  modules={[Controller]}
+                  onSwiper={setSecondSwiper}
+                  onSlideChange={() => setSliderCount((sliderCount + 1) % 3)}
+                  breakpoints={{
+                    // when window width is >= 640px
+                    640: {
+                      // width: 640,
+                      slidesPerView: 1,
+                    },
+                    768: {
+                      // width: 640,
+                      slidesPerView: 3,
+                    },
+                    // when window width is >= 768px
+                    1024: {
+                      // width: 768,
+                      slidesPerView: 3,
+                    },
+                  }}
+                >
+                  {blogs.map((e, index) => {
+                    return (
+                      <SwiperSlide key={e.header + index}>
+                        <BlogCard
+                          header={e.header}
+                          text={e.text}
+                          url={e.url}
+                          urlText={t("home:readAll")}
+                        />
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </div>
             </div>
           </ScrollAnimation>
-        </div> */}
+        </div>
         {/* Hizmetlerimiz */}
-        {/* <div className="my-20 w-full padX">
+        <div className="my-20 w-full padX">
           <PageHeader
             name={t("navbar:menuItem3")}
-            pageURL="/hizmetlerimiz"
+            url="/hizmetlerimiz"
             urlText={t("home:allPost")}
           />
 
@@ -265,7 +297,6 @@ export default function Home() {
                       img={Service1Img}
                       alt={t("navbar:megaMenuHeader1")}
                       name={t("navbar:megaMenuHeader1")}
-                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -273,7 +304,6 @@ export default function Home() {
                       img={Service2Img}
                       alt={t("navbar:megaMenuHeader6")}
                       name={t("navbar:megaMenuHeader6")}
-                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -281,7 +311,6 @@ export default function Home() {
                       img={Service3Img}
                       alt={t("navbar:megaMenuHeader3")}
                       name={t("navbar:megaMenuHeader4")}
-                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -289,7 +318,6 @@ export default function Home() {
                       img={Service3Img}
                       alt={t("navbar:megaMenuHeader4")}
                       name={t("navbar:megaMenuHeader4")}
-                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -297,7 +325,6 @@ export default function Home() {
                       img={Service2Img}
                       alt={t("navbar:megaMenuHeader2")}
                       name={t("navbar:megaMenuHeader2")}
-                      h={180}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
@@ -305,7 +332,6 @@ export default function Home() {
                       img={Service3Img}
                       alt={t("navbar:megaMenuHeader7")}
                       name={t("navbar:megaMenuHeader7")}
-                      h={180}
                     />
                   </SwiperSlide>
                 </Swiper>
@@ -347,53 +373,43 @@ export default function Home() {
               />
             </div>
           </ScrollAnimation>
-        </div> */}
+        </div>
       </div>
     </>
   );
 }
 
-// const ServicesCard = ({ name, img, alt }: any) => {
+const PageHeader = ({ name, url, urlText }: any) => {
+  return (
+    <div className="relative mb-10 lg:mb-16">
+      <h1 className="text-5xl lg:text-[85px] text-[#e6e8ec] font-bold">
+        {name}
+      </h1>
+      <h2 className="absolute text-3xl lg:text-5xl top-2 lg:top-5 left-0.5 font-bold">
+        {name}
+      </h2>
+      <Link
+        href={url}
+        className="absolute text-[#3288FC] right-0 top-9 hidden lg:block"
+      >
+        {urlText}
+      </Link>
+    </div>
+  );
+};
+
+// const BlogCard = ({ header, text, url, urlText }: any) => {
 //   return (
-//     <div className="bg-[#F4F5F6] rounded-lg">
-//       <Image
-//         src={img.src}
-//         width={358}
-//         height={250}
-//         alt={alt}
-//         className="rounded-t-lg w-full"
-//       />
-//       <div className="h-28 p-9 text-xl font-bold">{name}</div>
+//     <div className="bg-[#F4F5F6] rounded-lg p-10">
+//       <DocumentIcon width="30" height="30" fill="#C3C3C3" />
+//       <h3 className="text-2xl font-bold my-5">{header}</h3>
+//       <div className="text-[#7A8192] mb-5">{text}</div>
+//       <Link href={`/blog/${url}`} className="text-[#3288FC]">
+//         {urlText}
+//       </Link>
 //     </div>
 //   );
 // };
-
-const PageHeader = ({ name, pageUrl, urlText }: any) => {
-  return (
-    <div className="relative mb-16">
-      <h1 className="text-6xl lg:text-[85px] text-[#e6e8ec] font-bold">
-        {name}
-      </h1>
-      <h2 className="absolute text-3xl lg:text-5xl top-5 left-0.5 font-bold">
-        {name}
-      </h2>
-      <a className="absolute text-[#3288FC] right-0 top-9">{urlText}</a>
-    </div>
-  );
-};
-
-const BlogCard = ({ header, text, pageURL, urlText }: any) => {
-  return (
-    <div className="bg-[#F4F5F6] rounded-lg p-10">
-      <DocumentIcon width="30" height="30" fill="#C3C3C3" />
-      <h3 className="text-2xl font-bold my-5">{header}</h3>
-      <div className="text-[#7A8192] mb-5">{text}</div>
-      <a href={`/blog/${pageURL}`} className="text-[#3288FC]">
-        {urlText}
-      </a>
-    </div>
-  );
-};
 
 const HowWeWork = ({ icon, header, text, tailStyle }: any) => {
   return (

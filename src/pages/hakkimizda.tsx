@@ -2,6 +2,10 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import ScrollAnimation from "@components/ScrollAnimation";
+import PageHeader from "@components/PageHeader";
+import Image from "next/image";
+
+import TradeLicensesImg from "@assets/images/services/ticaret_lisanslari.png";
 
 export default function Home() {
   const router = useRouter();
@@ -9,54 +13,55 @@ export default function Home() {
 
   return (
     <>
-      <div className="grid place-items-center min-h-[800px] h-screen lg:pb-[10%]">
-        <div className="w-full padX grid lg:mt-[200px]">
-          <ScrollAnimation>
-            <h1 className="text-6xl">Oficzech</h1>
-            <p>
-              Çalışanlarımız ve müşterilerimizle birlikte, yaşadığımız an ile
-              gelecek arasındaki altın köprüyü mümkün olan en sağlam şekilde
-              kurma hedefiyle bir araya gelen büyük bir aileyiz. İşinizin ve iş
-              fikrinizin her aşamasıyla ilgili kapsamlı çözümler sunuyor ve
-              Çekya’da anadilinizde iletişim kurabileceğiniz güvenilir partner
-              ihtiyacınıza karşılık veriyoruz.
-            </p>
-            <h1 className="text-6xl">Farkındalık</h1>
-            <p>
-              İşimizi ve kendimizi hayal ettiğimiz global değişimin bir parçası
-              olarak görüyoruz. Daha sürdürülebilir ve sağlıklı bir
-              <a className="font-bold">gezegenin</a>, dayanışma ve refah
-              içindeki <a className="font-bold">toplumun</a> ve yaratabileceği
-              etkinin farkında olan güçlü <a className="font-bold">bireyin</a>{" "}
-              bu değişimdeki rolünün farkındayız. Yaşamak istediğimiz geleceğin
-              emektar kahramanlarından olmak istiyoruz.
-            </p>
-            <h1 className="text-6xl">Değerler</h1>
-            <p>
-              Etik ve dürüstlük konusunu tartışmaya açık görmüyoruz. Güven
-              verilmez, kazanılır prensibi ile hareket ediyoruz. Şeffaf
-              iletişim, tavizsiz disiplin ve sorumluluk bilincimiz sayesinde
-              küçükten büyüğe tüm işbirliklerimizde uzun ömürlülük ve güven
-              ortamı önceliğimiz.
-            </p>
-            <h1 className="text-6xl">Dayanışma</h1>
-            <p>
-              Gelişim ve ilerleme yolunda harika fikirlerin ancak ve ancak
-              destekleyicisi olabiliriz. Dünyanın dört bir yanından
-              partnerlerimiz ile birbirimizi destekliyor ve yeni işbirliği
-              fırsatlarımızın peşinden gidiyoruz.
-            </p>
-            <h1 className="text-6xl">Yenilikçilik</h1>
-            <p>
-              Dünyamız akıl almaz bir hızla gelişiyor, dönüşüyor ve
-              dijitalleşiyor. Bu dönüşüme ayak uydurmanın tek yolunun bizden
-              öncekilerin tecrübe ve bilgisini; yenilikçi, modern ve yaratıcı
-              bakış açısıyla birleştirmek olduğunu düşünüyoruz. Teknolojiyi ve
-              yenilikleri maksimum hassasiyet ile takip etmeye çalışıyoruz.
-            </p>
-          </ScrollAnimation>
+      <div className="w-full bg-[#F4F5F6] mt-[106px] lg:mt-[93px]">
+        <div className="padX pt-6 pb-6 lg:py-12">
+          <PageHeader name={t("navbar:menuItem2")} />
         </div>
       </div>
+      <ScrollAnimation>
+        <div>
+          <div className="padX">
+            <p className="text-[#7A8192] text-[18px] py-6 lg:text-xl lg:py-12">
+              {t("aboutUs:mainText")}
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 mb-20">
+              <div className=" lg:pr-5">
+                <Image
+                  src={TradeLicensesImg}
+                  alt="hakkimizda"
+                  className="w-full h-full rounded-xl"
+                />
+              </div>
+              <div className="mt-9 lg:mt-0">
+                <div className="mb-4">
+                  <h1 className="text-2xl font-bold mb-1">
+                    {t("aboutUs:header1")}
+                  </h1>
+                  <p>{t("aboutUs:text1")}</p>
+                </div>
+                <div className="mb-4">
+                  <h1 className="text-2xl font-bold mb-1">
+                    {t("aboutUs:header2")}
+                  </h1>
+                  <p>{t("aboutUs:text2")}</p>
+                </div>
+                <div className="mb-4">
+                  <h1 className="text-2xl font-bold mb-1">
+                    {t("aboutUs:header3")}
+                  </h1>
+                  <p>{t("aboutUs:text3")}</p>
+                </div>
+                <div className="">
+                  <h1 className="text-2xl font-bold mb-1">
+                    {t("aboutUs:header4")}
+                  </h1>
+                  <p>{t("aboutUs:text4")}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ScrollAnimation>
     </>
   );
 }
@@ -66,7 +71,7 @@ export async function getStaticProps({ locale }: any) {
     props: {
       ...(await serverSideTranslations(locale, [
         "common",
-        "home",
+        "aboutUs",
         "navbar",
         "footer",
       ])),

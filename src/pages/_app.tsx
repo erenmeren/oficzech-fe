@@ -4,6 +4,7 @@ import { appWithTranslation } from "next-i18next";
 import Layout from "@components/layout";
 import { DM_Sans } from "@next/font/google";
 import Head from "next/head";
+import { AnimatePresence } from "framer-motion";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -22,7 +23,9 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <div className={dmSans.className}>
         <Layout>
+          {/* <AnimatePresence mode="wait" initial={false}> */}
           <Component {...pageProps} />
+          {/* </AnimatePresence> */}
         </Layout>
       </div>
     </>

@@ -27,41 +27,30 @@ export default function Footer() {
     <div className="bg-[#F4F5F6]">
       {/* step 1 */}
       <div className="grid place-items-center py-5">
-        <div
-          className="grid grid-cols-1 flex items-center w-full padX 
-                        lg:grid-cols-2"
-        >
-          <div
-            className="flex text-sm font-medium justify-center
-                  lg:text-base lg:justify-start"
-          >
+        <div className="grid grid-cols-1 items-center w-full padX lg:grid-cols-2">
+          <div className="flex text-sm font-medium justify-center lg:text-base lg:justify-start">
             <Link href="/" locale={i18n.language}>
               {t("navbar:menuItem1")}
             </Link>
-            <div className="mx-3">|</div>
-            <Link href="/#" locale={i18n.language}>
-              {/* <Link href="/hakkimizda" locale={i18n.language}> */}
+            <div className="mx-1 lg:mx-3">|</div>
+            <Link href="/hakkimizda" locale={i18n.language}>
               {t("navbar:menuItem2")}
             </Link>
-            <div className="mx-3">|</div>
-            <Link href="/" locale={i18n.language}>
+            <div className="mx-1 lg:mx-3">|</div>
+            <Link href="/hizmetlerimiz" locale={i18n.language}>
               {t("navbar:menuItem3")}
             </Link>
-            <div className="mx-3">|</div>
-            <Link href="/#" locale={i18n.language}>
-              {/* <Link href="/blog" locale={i18n.language}> */}
+            <div className="mx-1 lg:mx-3">|</div>
+
+            <Link href="/blog" locale={i18n.language}>
               {t("navbar:menuItem4")}
             </Link>
-            <div className="mx-3">|</div>
-            <Link href="/#" locale={i18n.language}>
-              {/* <Link href="/iletisim" locale={i18n.language}> */}
+            <div className="mx-1 lg:mx-3">|</div>
+            <Link href="/iletisim" locale={i18n.language}>
               {t("navbar:menuItem5")}
             </Link>
           </div>
-          <div
-            className="flex justify-center mt-5 
-                      lg:justify-end lg:mt-0"
-          >
+          <div className="flex justify-center mt-5 lg:justify-end lg:mt-0">
             <Link
               href="https://www.linkedin.com/company/oficzech/about/"
               target="_blank"
@@ -385,7 +374,7 @@ export default function Footer() {
       </div>
       {/* step 4 */}
       <div className="grid place-items-center py-5">
-        <div className="w-full padX grid grid-cols-1 lg:grid-cols-2 flex items-center text-[13px]">
+        <div className="w-full padX grid grid-cols-1 lg:grid-cols-2 items-center text-[13px]">
           Copyright © {new Date().getFullYear()} Oficzech {t("footer:rights")}
         </div>
       </div>

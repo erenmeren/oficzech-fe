@@ -12,31 +12,19 @@
   }
 }
 
- {
-  /* sm:bg-orange-300 
-      md:bg-pink-300 
-      lg:bg-blue-300 
-      xl:bg-rose-300
-      2xl:bg-teal-600 */
-
-  /* 'sm': '640px',
-      // => @media (min-width: 640px) { ... }
-
-      'md': '768px',
-      // => @media (min-width: 768px) { ... }
-
-      'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
-
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... } */
-}
-
 @layer components {
   .padX {
     @apply px-[5%] sm:px-[5%] md:px-[8%] lg:px-[5%] xl:px-[12%] 2xl:px-[18%];
   }
+}
+
+.card-zoom {
+  @apply relative flex items-center justify-center  overflow-hidden;
+}
+.card-zoom-image {
+  @apply transition-all duration-500 ease-in-out transform bg-center bg-cover;
+}
+
+.card-zoom:hover .card-zoom-image {
+  @apply scale-150;
 }
